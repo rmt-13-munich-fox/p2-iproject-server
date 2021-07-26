@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Bookmark.belongsTo(models.User)
+      Bookmark.belongsTo(models.News)
     }
   };
   Bookmark.init({
@@ -24,6 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     NewsId:{
       type : DataTypes.INTEGER,
+      allowNull: false,
+      unique : true,
       references : {
         model : "News",
         key  :" id"

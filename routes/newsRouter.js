@@ -7,7 +7,9 @@ const job = require('../helpers/cronJob')
 router.use(authentification)
 router.get('/latest-news',Controller.getLatestNews)
 router.get('/keywords/:keywords',Controller.searchKeywords)
-
-
+router.get('/bookmark',Controller.getBookmarks)
+router.post('/bookmark/:id',Controller.addBookmark)
+// Authorization
+router.delete('/bookmark/:id',Controller.deleteBookmark)
 
 module.exports = router
