@@ -11,6 +11,9 @@ module.exports = {
       NewsId: {
         type: Sequelize.INTEGER
       },
+      sentiment : {
+        type: Sequelize.STRING
+      },
       tokens: {
         type: Sequelize.TEXT
       },

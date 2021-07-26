@@ -6,7 +6,8 @@ const job = require('../helpers/cronJob')
 // job.start()
 router.use(authentification)
 router.get('/latest-news',Controller.getLatestNews)
-router.get('/keywords',Controller.searchKeywords)
+router.get('/keywords/:keywords',Controller.searchKeywords)
+
 
 
 module.exports = router

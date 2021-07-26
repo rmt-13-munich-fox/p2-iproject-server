@@ -1,5 +1,5 @@
-const Sentiment = require('sentiment');
 const getStopWords = require('./helpers/getStopWords');
+const Sentiment = require('sentiment');
 const sentiment = new Sentiment();
 
 const news = require('./data/dummy.json')
@@ -15,12 +15,6 @@ news.forEach(el =>{
   el.stopwords = getStopWords(el.description)
   el.positive_words = result.positive
   el.negative_words = result.negative
-  delete el.id
-  delete el.published
-  delete el.image_url
-  delete el.createdAt
-  delete el.updatedAt
-  delete el.url
 })
 
 

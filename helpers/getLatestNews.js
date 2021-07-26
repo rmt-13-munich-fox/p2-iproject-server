@@ -1,6 +1,5 @@
-require('dotenv').config()
 const axios = require('axios');
-const BASE_URL = 'https://api.currentsapi.services/v1'
+const BASE_URL =  process.env.BASE_URL
 
 const getLatestNews = ()=>{
   return axios.get(`${BASE_URL}/latest-news`,{

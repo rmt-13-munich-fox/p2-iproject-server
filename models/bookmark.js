@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Sentiment extends Model {
+  class Bookmark extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,28 +11,27 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Sentiment.belongsTo(models.News)
+      Bookmark.belongsTo(models.User)
     }
   };
-  Sentiment.init({
-    NewsId: {
+  Bookmark.init({
+    UserId: {
+      type : DataTypes.INTEGER,
+      references : {
+        model : "User",
+        key  :" id"
+      }
+    },
+    NewsId:{
       type : DataTypes.INTEGER,
       references : {
         model : "News",
-        key : "id"
+        key  :" id"
       }
     },
-    sentiment : DataTypes.STRING,
-    tokens: DataTypes.TEXT,
-    positive_words: DataTypes.TEXT,
-    negative_words: DataTypes.TEXT,
-    stop_words: DataTypes.TEXT,
-    comperative: DataTypes.FLOAT,
-    score: DataTypes.INTEGER,
-    calculation: DataTypes.TEXT
   }, {
     sequelize,
-    modelName: 'Sentiment',
+    modelName: 'Bookmark',
   });
-  return Sentiment;
+  return Bookmark;
 };
