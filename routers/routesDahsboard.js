@@ -1,6 +1,8 @@
 const Controller = require('../controllers/dahsboardController');
-
 const routes = require('express').Router()
+const { authentication } = require('../middlewares/auth'); 
+
+routes.use(authentication)
 
 routes.use('/:name' , Controller.getByName)
 
