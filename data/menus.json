@@ -1,0 +1,142 @@
+[
+    {
+        "name": "Bakmi Ayam Original Komplit",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Original-Komplit.jpeg",
+        "price": 30000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Original Bakso",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Original-Bakso.jpeg",
+        "price": 25000,
+        "isReady": true,
+        "CategoryId": 1
+    }, 
+    {
+        "name": "Bakmi Ayam Original Pangsit Goreng",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Original-Pangsit-Goreng.jpeg",
+        "price": 25000,
+        "isReady": true,
+        "CategoryId": 1
+    }, 
+    {
+        "name": "Bakmi Ayam Original Pangsit Rebus",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Original-Pangsit-Rebus.jpeg",
+        "price": 25000,
+        "isReady": true,
+        "CategoryId": 1
+    }, 
+    {
+        "name": "Bakmi Ayam Original Polos",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Original-Polos.jpeg",
+        "price": 20000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Yamin Komplit",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Yamin-Komplit.jpeg",
+        "price": 30000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Yamin Bakso",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Yamin-Bakso.jpeg",
+        "price": 25000,
+        "isReady": true,
+        "CategoryId": 1
+    }, 
+    {
+        "name": "Bakmi Ayam Yamin Pangsit Goreng",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Yamin-Pangsit-Goreng.jpeg",
+        "price": 25000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Yamin Pangsit Rebus",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Yamin-Pangsit-Rebus.jpeg",
+        "price": 25000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Yamin Polos",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Yamin-Polos.jpeg",
+        "price": 25000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Original Polos",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Original-Polos.jpeg",
+        "price": 20000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Shirataki Komplit",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Shirataki-Komplit.jpeg",
+        "price": 45000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Shirataki Bakso",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Shirataki-Bakso.jpeg",
+        "price": 41000,
+        "isReady": true,
+        "CategoryId": 1
+    }, 
+    {
+        "name": "Bakmi Ayam Shirataki Pangsit Goreng",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Shirataki-Pangsit-Goreng.jpeg",
+        "price": 40000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Shirataki Pangsit Rebus",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Shirataki-Pangsit-Rebus.jpeg",
+        "price": 41000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Bakmi Ayam Shirataki Polos",
+        "img_url": "/bakmipolim/Bakmi-Ayam-Shirataki-Polos.jpeg",
+        "price": 35000,
+        "isReady": true,
+        "CategoryId": 1
+    },
+    {
+        "name": "Air Mineral",
+        "img_url": "/bakmipolim/lemineral.jpeg",
+        "price": 15000, 
+        "isReady": true,
+        "CategoryId": 2
+    },
+    {
+        "name": "Sarsaparilla Badak",
+        "img_url": "/bakmipolim/cap-badak.jpeg",
+        "price": 5000,
+        "isReady": true,
+        "CategoryId": 2
+    },
+    {
+        "name": "Bakso",
+        "img_url": "/bakmipolim/Bakso.jpeg",
+        "price": 20000,
+        "isReady": true,
+        "CategoryId": 3
+    },
+    {
+        "name": "Pangsit Rebus",
+        "img_url": "/bakmipolim/Pangsit-Rebus.jpeg",
+        "price": 20000,
+        "isReady": true,
+        "CategoryId": 3
+    }
+]
