@@ -27,12 +27,13 @@ class ControllerAdmin {
             .then(admin => {
                 if (bcrypt.compareSync(password, admin.password)) {
                     let access_token = generateToken({id: admin.id, email: admin.email})
-                    res.status(200).json({access_token})
+                    res.status(200).json({access_token, email: admin.email})
                 } else {
                     res.status(401).json({error: "Invalid Email/Password" })
                 }
             })
             .catch((err) => {
+                console.log('keseini emang?');
                 res.status(401).json({error: "Invalid email/password"})
             })
     }
