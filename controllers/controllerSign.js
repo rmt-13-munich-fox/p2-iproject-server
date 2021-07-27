@@ -9,8 +9,9 @@ class Sign{
             let {username, email, password, address, quotes} = req.body
             const { originalname } = req.file;
             const buffer = req.file.buffer.toString("base64");
-            let imgUrl = await getAxios(originalname, buffer);
+            let imgUrl = await getAxios(originalname, buffer)
             password = hashSync(password)
+            imgUrl = imgUrl.url
             let dataSign = await User.create({username, email, password, address, quotes, imgUrl})
             if(dataSign){
                 res.status(201).json({id: dataSign.id, email})
@@ -19,6 +20,7 @@ class Sign{
             }
         }
         catch(err){
+            console.log(err);
             if(err.code){
                 next({
                     name: err.name,
@@ -46,11 +48,12 @@ class Sign{
                 throw {code: 400, message: "Email or Password cannot be empty", name:"ValidationError"}
             } else{
                 let dataUser = await User.findOne({where: {email: email}})
+                console.log(dataUser);
                 if(dataUser){
                     let dataPassword = compareSync(password, dataUser.password)
                     if(dataPassword){
-                        let token = jwt.sign({id: dataUser.id, role: dataUser.role}, process.env.SECRET)
-                        res.status(200).json({token})
+                        let access_token = jwt.sign({id: dataUser.id, role: dataUser.role}, process.env.SECRET)
+                        res.status(200).json({access_token, id: dataUser.id})
                     } else{
                         throw {code:401, message: "Error User Email or Password is Wrong", name: "ErrorLoginUser"}
                     }
@@ -60,7 +63,7 @@ class Sign{
             }
         }
         catch(err){
-            // console.log(err);
+            console.log(err);
             if(err.code){
                 next({
                     name: err.name,
@@ -71,6 +74,43 @@ class Sign{
                 name: "InternalErrorServer",
                 message: "Internal Server Error"
             })
+        }
+    }
+    static async editUser(req, res, next){
+        try{
+            const id = req.params.id
+            let {username, email, password, address, quotes} = req.body
+            const { originalname } = req.file;
+            const buffer = req.file.buffer.toString("base64");
+            let imgUrl = await getAxios(originalname, buffer)
+            password = hashSync(password)
+            imgUrl = imgUrl.url
+            let dataUser = await User.put({username, email, password, address, quotes, imgUrl}, {where: {id}})
+            if(dataUser){
+                res.status(201).json({message: 'success to update'})
+            } else {
+                throw {code: 400, message: "Error Create Table User", name: "ErrorCreateAndEdit" }
+            }
+        }
+        catch(err){
+            console.log(err);
+            if(err.code){
+                next({
+                    name: err.name,
+                    message: err.message
+                })
+            }
+            if(err.message){
+                next({
+                    name: "ValidationError",
+                    message: err.message
+                })
+            }else{
+                next({
+                    name: "InternalErrorServer",
+                    message: "Internal Server Error"
+                })
+            }
         }
     }
 }
