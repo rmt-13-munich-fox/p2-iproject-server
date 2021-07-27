@@ -11,10 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Order.belongsToMany(models.Menu, {through: models.OrderMenu})
+      Order.belongsTo(models.Admin)
     }
   };
   Order.init({
-    customerName: DataTypes.STRING
+    customerName: DataTypes.STRING,
+    AdminId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Order',
