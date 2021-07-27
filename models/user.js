@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const {hash} = require('../helpers/hashing');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     
@@ -13,25 +14,30 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type : DataTypes.STRING,
       validate: {
-        notEmpty : true
+        notEmpty : { msg: 'no Username' }
       }
     },
     email: {
       type : DataTypes.STRING,
+      unique: { msg: 'exist'},
       validate : {
-        notEmpty : true,
-        isEmail: true
+        notEmpty : { msg: 'no Email' },
+        isEmail: {msg: 'format email wrong'}
       }
     },
     password: {
       type : DataTypes.STRING,
       validate : {
-        notEmpty : true
+        notEmpty : { msg: 'no Password' }
       }
     }
   }, {
     sequelize,
     modelName: 'User',
+  });
+
+  User.addHook('beforeCreate', (instance, options) => {
+    instance.password = hash(instance.password);
   });
   return User;
 };
