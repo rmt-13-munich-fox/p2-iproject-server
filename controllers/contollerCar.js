@@ -6,6 +6,7 @@ class Cars{
             const data = await Car.findAll()
             res.status(200).json(data)
         } catch (err) {
+            console.log(err);
             next({
                 code: err.code,
                 message: err.message

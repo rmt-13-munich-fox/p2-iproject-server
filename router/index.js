@@ -6,7 +6,7 @@ const favorites = require('./favorites')
 
 router.use('/', sign)
 router.use(authentication)
-router.use('/car', cars)
+router.use('/cars', cars)
 router.use('/favorites', favorites)
 
 module.exports = router
