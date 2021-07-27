@@ -4,10 +4,10 @@ const { authentication } = require('../middlewares/auth');
 
 routes.use(authentication)
 
-routes.use('/:name' , Controller.getByName)
+routes.use('/nations/:name' , Controller.getByName)
 
-routes.use('/:name:date' , Controller.getByName)
+routes.use('/date' , Controller.getByNameAndDate)
 
-routes.use('/:code' , Controller.getByCode)
+routes.use('/code/:code' , Controller.getByCode)
 
 module.exports = routes

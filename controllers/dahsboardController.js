@@ -1,14 +1,56 @@
+const axios = require('axios');
+
 class Controller {
   static getByName(req, res){
-    res.end()
+    const {name} = req.params
+    axios({
+      method: 'get',
+      url : `https://covid-19-data.p.rapidapi.com/country?name=${name}`,
+      headers : {
+        'x-rapidapi-key' : 'a89ab4b177msh328f0a2ea32e265p1bab2ajsn9a2a4a563006',
+      }
+    })
+    .then(result => {
+      res.status(200).json(result.data)
+    })
+    .catch(err => {
+      res.status(500).json({msg:'Internal Server Error'})
+    })    
   }
 
   static getByNameAndDate(req, res){
-    res.end()
+    let {name, date} = req.query
+    axios({
+      method: 'get',
+      url : `https://covid-19-data.p.rapidapi.com/report/country/name?name=${name}&date=${date}`,
+      headers : {
+        'x-rapidapi-key' : 'a89ab4b177msh328f0a2ea32e265p1bab2ajsn9a2a4a563006',
+      }
+    })
+    .then(result => {
+      res.status(200).json(result.data)
+    })
+    .catch(err => {
+      res.status(500).json({msg:'Internal Server Error'})
+    })    
+    
   }
 
   static getByCode(req, res){
-    res.end()
+    let {code} = req.params
+    axios({
+      method: 'get',
+      url : `https://covid-19-data.p.rapidapi.com/country/code?code=${code}`,
+      headers : {
+        'x-rapidapi-key' : 'a89ab4b177msh328f0a2ea32e265p1bab2ajsn9a2a4a563006',
+      }
+    })
+    .then(result => {
+      res.status(200).json(result.data)
+    })
+    .catch(err => {
+      res.status(500).json({msg:'Internal Server Error'})
+    })
   }
 }
 
