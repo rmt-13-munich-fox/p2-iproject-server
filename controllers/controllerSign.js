@@ -1,0 +1,78 @@
+const {User} = require('../models')
+const jwt = require('jsonwebtoken')
+const { hashSync, compareSync } = require('../helper/bcrypt')
+const getAxios = require("../helper/axios");
+
+class Sign{
+    static async signUp(req, res, next){
+        try{
+            let {username, email, password, address, quotes} = req.body
+            const { originalname } = req.file;
+            const buffer = req.file.buffer.toString("base64");
+            let imgUrl = await getAxios(originalname, buffer);
+            password = hashSync(password)
+            let dataSign = await User.create({username, email, password, address, quotes, imgUrl})
+            if(dataSign){
+                res.status(201).json({id: dataSign.id, email})
+            } else {
+                throw {code: 400, message: "Error Create Table User", name: "ErrorCreateAndEdit" }
+            }
+        }
+        catch(err){
+            if(err.code){
+                next({
+                    name: err.name,
+                    message: err.message
+                })
+            }
+            if(err.message){
+                next({
+                    name: "ValidationError",
+                    message: err.message
+                })
+            }else{
+                next({
+                    name: "InternalErrorServer",
+                    message: "Internal Server Error"
+                })
+            }
+        }
+    }
+    static async login(req, res, next){
+        try{
+            let { email, password } = req.body
+            // console.log(req.body);
+            if(!email || !password){
+                throw {code: 400, message: "Email or Password cannot be empty", name:"ValidationError"}
+            } else{
+                let dataUser = await User.findOne({where: {email: email}})
+                if(dataUser){
+                    let dataPassword = compareSync(password, dataUser.password)
+                    if(dataPassword){
+                        let token = jwt.sign({id: dataUser.id, role: dataUser.role}, process.env.SECRET)
+                        res.status(200).json({token})
+                    } else{
+                        throw {code:401, message: "Error User Email or Password is Wrong", name: "ErrorLoginUser"}
+                    }
+                } else{
+                    throw {code:401, message: "Error User Email or Password is Wrong", name: "ErrorLoginUser"}
+                }
+            }
+        }
+        catch(err){
+            // console.log(err);
+            if(err.code){
+                next({
+                    name: err.name,
+                    message: err.message
+                })
+            }
+            next({
+                name: "InternalErrorServer",
+                message: "Internal Server Error"
+            })
+        }
+    }
+}
+
+module.exports = Sign
