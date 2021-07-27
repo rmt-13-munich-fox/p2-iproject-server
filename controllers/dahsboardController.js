@@ -7,7 +7,7 @@ class Controller {
       method: 'get',
       url : `https://covid-19-data.p.rapidapi.com/country?name=${name}`,
       headers : {
-        'x-rapidapi-key' : 'a89ab4b177msh328f0a2ea32e265p1bab2ajsn9a2a4a563006',
+        'x-rapidapi-key' : process.env.TOKEN_RAPID_API,
       }
     })
     .then(result => {
@@ -24,7 +24,7 @@ class Controller {
       method: 'get',
       url : `https://covid-19-data.p.rapidapi.com/report/country/name?name=${name}&date=${date}`,
       headers : {
-        'x-rapidapi-key' : 'a89ab4b177msh328f0a2ea32e265p1bab2ajsn9a2a4a563006',
+        'x-rapidapi-key' : process.env.TOKEN_RAPID_API,
       }
     })
     .then(result => {
@@ -42,7 +42,7 @@ class Controller {
       method: 'get',
       url : `https://covid-19-data.p.rapidapi.com/country/code?code=${code}`,
       headers : {
-        'x-rapidapi-key' : 'a89ab4b177msh328f0a2ea32e265p1bab2ajsn9a2a4a563006',
+        'x-rapidapi-key' : process.env.TOKEN_RAPID_API,
       }
     })
     .then(result => {
