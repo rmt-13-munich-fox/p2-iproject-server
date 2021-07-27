@@ -52,8 +52,8 @@ class Sign{
                 if(dataUser){
                     let dataPassword = compareSync(password, dataUser.password)
                     if(dataPassword){
-                        let access_token = jwt.sign({id: dataUser.id, role: dataUser.role}, process.env.SECRET)
-                        res.status(200).json({access_token, id: dataUser.id})
+                        let access_token = jwt.sign({id: dataUser.id, username: dataUser.username}, process.env.SECRET)
+                        res.status(200).json({access_token, id: dataUser.id, username: dataUser.username})
                     } else{
                         throw {code:401, message: "Error User Email or Password is Wrong", name: "ErrorLoginUser"}
                     }
@@ -85,7 +85,7 @@ class Sign{
             let imgUrl = await getAxios(originalname, buffer)
             password = hashSync(password)
             imgUrl = imgUrl.url
-            let dataUser = await User.put({username, email, password, address, quotes, imgUrl}, {where: {id}})
+            let dataUser = await User.update({username, email, password, address, quotes, imgUrl}, {where: {id}})
             if(dataUser){
                 res.status(201).json({message: 'success to update'})
             } else {

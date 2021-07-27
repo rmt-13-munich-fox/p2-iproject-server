@@ -12,6 +12,18 @@ class Cars{
             })
         }
     }
+    static async detailData(req, res, next){
+        try {
+            const {id} = req.params
+            const data = await Car.findByPk(id)
+            res.status(200).json(data)
+        } catch (err) {
+            next({
+                code: err.code,
+                message: err.message
+            })
+        }
+    }
 }
 
 module.exports = Cars

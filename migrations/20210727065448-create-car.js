@@ -20,6 +20,9 @@ module.exports = {
       year: {
         type: Sequelize.INTEGER
       },
+      imgUrl: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
