@@ -19,7 +19,7 @@ class ControllerOrder {
 
     static allOrder(req, res, next) {
         let id = +req.params.orderid
-        Order.findAll({include: [{model: Menu, attributes: {exclude: ["createdAt", "updatedAt"]}}]})
+        Order.findOne({where: {id}, include: [{model: Menu, attributes: {exclude: ["createdAt", "updatedAt"]}}]})
             .then(dataOrder => {
                 res.status(200).json(dataOrder)
             })

@@ -145,51 +145,50 @@ not needed
 
 _Response (200)_
 ```
-[
-  {
-    "id": 1,
-    "customerName": "Adul azis",
-    "AdminId": 1,
-    "createdAt": "2021-07-27T12:20:21.322Z",
-    "updatedAt": "2021-07-27T12:20:21.322Z",
-    "Menus": [
-      {
-        "id": 15,
-        "name": "Bakmi Ayam Shirataki Polos",
-        "img_url": "https://ik.imagekit.io/damario789/bakmipolim/Bakmi-Ayam-Shirataki-Polos_TUWOxZ8ui.jpeg?updatedAt=1627366601013",
-        "price": 35000,
-        "isReady": true,
-        "CategoryId": 1,
-        "OrderMenus": {
-          "id": 1,
-          "OrderId": 1,
-          "MenuId": 15,
-          "quantityItem": 5,
-          "quantityPrice": 175000,
-          "createdAt": "2021-07-27T12:54:52.239Z",
-          "updatedAt": "2021-07-27T12:54:52.239Z"
-        }
-    },
+{
+  "id": 1,
+  "customerName": "Adul azis",
+  "AdminId": 1,
+  "createdAt": "2021-07-27T12:20:21.322Z",
+  "updatedAt": "2021-07-27T12:20:21.322Z",
+  "Menus": [
     {
-        "id": 12,
-        "name": "Bakmi Ayam Shirataki Bakso",
-        "img_url": "https://ik.imagekit.io/damario789/bakmipolim/Bakmi-Ayam-Shirataki-Bakso_ZBKhySJCP.jpeg?updatedAt=1627366597490",
-        "price": 41000,
-        "isReady": true,
-        "CategoryId": 1,
-        "OrderMenus": {
-          "id": 2,
-          "OrderId": 1,
-          "MenuId": 12,
-          "quantityItem": 2,
-          "quantityPrice": 82000,
-          "createdAt": "2021-07-27T13:13:04.856Z",
-          "updatedAt": "2021-07-27T13:13:04.856Z"
-        }
+      "id": 15,
+      "name": "Bakmi Ayam Shirataki Polos",
+      "img_url": "https://ik.imagekit.io/damario789/bakmipolim/Bakmi-Ayam-Shirataki-Polos_TUWOxZ8ui.jpeg?updatedAt=1627366601013",
+      "price": 35000,
+      "isReady": true,
+      "CategoryId": 1,
+      "OrderMenus": {
+        "id": 1,
+        "OrderId": 1,
+        "MenuId": 15,
+        "quantityItem": 5,
+        "quantityPrice": 175000,
+        "createdAt": "2021-07-27T12:54:52.239Z",
+        "updatedAt": "2021-07-27T12:54:52.239Z"
       }
-    ]
-  }
-]
+  },
+  {
+      "id": 12,
+      "name": "Bakmi Ayam Shirataki Bakso",
+      "img_url": "https://ik.imagekit.io/damario789/bakmipolim/Bakmi-Ayam-Shirataki-Bakso_ZBKhySJCP.jpeg?updatedAt=1627366597490",
+      "price": 41000,
+      "isReady": true,
+      "CategoryId": 1,
+      "OrderMenus": {
+        "id": 2,
+        "OrderId": 1,
+        "MenuId": 12,
+        "quantityItem": 2,
+        "quantityPrice": 82000,
+        "createdAt": "2021-07-27T13:13:04.856Z",
+        "updatedAt": "2021-07-27T13:13:04.856Z"
+      }
+    }
+  ]
+}
+
 ```
 
 _Response (404 - Not Found)_
