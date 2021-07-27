@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Menu.belongsTo(models.Category)
+      Menu.belongsToMany(models.Order, {through: models.OrderMenu})
     }
   };
   Menu.init({
