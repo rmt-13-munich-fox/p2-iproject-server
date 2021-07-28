@@ -1,80 +1,158 @@
 [
     {
         "day": 1,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "image_url":"https://i.pinimg.com/originals/50/e1/35/50e135fa7a45f83218d8d36d1e3654cb.jpg",
         "name":"Welcome to Bali",
         "descriptions":"Welcome to Bali! Upon your arrival at Ngurah Rai International Airport of Denpasar you will be met by our representative at arrival terminal who will hold paging board with your name on it. Your private car is waiting for you to bring you to your resort which is located in Ubud. Start your Bali experience already on the way to your resort and spend the rest of the day unpacking and exploring the beautiful surroundings of your resort.",
         "hotel":"Furama Xclusive Villa Ubud"
     },
     {
         "day": 2,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "image_url":" https://lh3.googleusercontent.com/proxy/zjPuK4py5qAejT8ztF34mYlKjBeipO_-mLqUNf9AViWTB6j51_jMImMeQeyob7wdjGXEaBlpJSZCAWAV_JzBYpyfwJfmmIDQpQ",
         "name":"TEMPLE Visit",
         "descriptions":"Breakfast at hotel then proceed to private visit to ancient Gunung Kawi Temple, one of the oldest temples in Bali built in the 11th century.  We’ll have the opportunity to experience the mystery of these historical remains crafted in a side of a small mountain.  Surrounded by lush green tropical rice fields -- you’ll have a chance to meditate listen to the silence.   Be sure to bring your camera.  And good walking shoes! Temple includes a bit of a climb down steps, and back again.  Trip continues to Tegallalang with its beautiful rice terraces with coconut trees and small river valley. Then to Yeh Pulu, the site was rediscovered in 1925 by the archaeologists covered by moss and shrubs yet local people still knew them and put some offering at the front of the carvings. In 1949 a simple protection was laid out to avoid water flowing on the surface of the relief. Afterwards continue to Goa Gajah (Elephant Cave) - The site is mentioned in the Javanese poem Desawarnana written in 1365. An extensive bathing place on the site was not excavated until the 1950s. These appear to have been built to ward off evil spirits. Lunch will be provided at local restaurant.  Afternoon free to wander Ubud and surroundings",
         "hotel":"Furama Xclusive Villa Ubud"
     },
     {
         "day": 3,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "image_url":"https://media.tacdn.com/media/attractions-splice-spp-674x446/07/8b/c1/c2.jpg",
         "name":"Ubud, cooking class",
         "descriptions":"Pick up at hotel lobby at 8am. Today’s program to join traditional family home near Ubud to learn the secrets of Balinese organic cooking. Embark on a culinary adventure unlocking the secrets of authentic Balinese cooking, utilizing traditional ingredients and preparation methods, in a fully equipped community village kitchen. An experience - starting with the trip round the market, then a walk through the rice paddies with explanations of how the whole system works a trip round the village, then the class. Lead by wonderful hosts and guides, being in a village house, and learning more about how they live. Definitely well worth doing!",
         "hotel":"Furama Xclusive Villa Ubud"
     },
     {
         "day": 4,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "image_url":"https://pix10.agoda.net/hotelImages/3155616/-1/4f368bd270f79cd2cfb648b9bc69f695.jpg?s=1024x768",
         "name":"Relax in Ubud",
         "descriptions":"Have the whole day on your own - enjoy your breakfast surrounded by Rice field and later do own activities such as discover various craftsmanship’s in numerous shops.",
         "hotel":"Furama Xclusive Villa Ubud"
     },
     {
         "day": 5,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "image_url":"https://balistarisland.com/wp-content/uploads/2016/03/wakalandcruise-710x390.jpg",
         "name":"Discover the rural village with Land Cruiser",
         "descriptions":"A rain forest camp and restaurant deep in the mountains of Bali - Gunung Batukaru. Your journey to the soul of Bali is one of comfort excitement and adventure. We travel in a legendary customized land rover - only six people together with a Balinese expert guide and driver. Air conditioned, comfortable and the route through scenic country side is not strenuous. You visit the unusual and traditional you see the Balinese people as they work pray and play sometimes, smiling with hellos, sometimes somber. You traverse spectacular country side-slowly and in comfort. The trip is not arduous as there are plenty of stops along the way-looking-looking. You visit an amazing quarry of stones where it seems time has stood still for centuries. You pass temples and small forgotten villages and shrines and always the mountains are in the distance - getting closer. A stop at a small farm to see the crops (vanilla, coffee, cocoa, cloves) and the local animals - there we serve coffee and tea with cakes from the baskets we carry on the roof of the car. You will remember this special journey through the 'remarkable, unseen Bali'",
         "hotel":"Furama Xclusive Villa Ubud"
-    }
-    ,{
+    },
+    {
         "day": 6,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "image_url":"https://www.balibirdpark.com/images/red_01.jpg",
         "name":"Bali Bird Park and move into another world",
         "descriptions":"A last breakfast in Ubud and at noon, get slowly ready for your transfer to beach in the southern part of Bali, the “place to go, the place to be” at the moment – not a transfer, a journey through wood and stone carving villages.  A stop will be made at the Bali Bird Park, Find yourself at the Bali Bird Park to witness the largest and finest collection of Indonesian birds in the world plus fantastic birds from Africa & South America. Encompassing two hectares of botanical landscape, the park provides sanctuary to almost 1000 birds of 250 different species. Our innovative approach towards the display of rare and tropical birds has progressed from traditional exhibits to that of showcasing mixed species in their natural habitats & in large walk in Aviaries and free range throughout the park. The park accommodates an amazing display of flora with more then 2000 tropical plants including 50 varieties of palms alone and attracting numerous butterflies. Incorporating a breeding, research and veterinary facility within the complex, the park has a high success rate in the captive reproduction of exotic birds such as the Bird of Paradise and Hornbill. Trip continues to visit the Batik Factory nearby the area and late afternoon check in at your hotel in Sanur.",
         "hotel":"Puri SANTRIAN Resort Sanur"
-    }
-    ,
+    },
     {
-        "day": 1,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "day": 7,
+        "image_url":" https://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/4/2019/05/Sanur-Beach-Bali.jpg",
+        "name":"Relax by the Beach",
+        "descriptions":"Have the whole day on your own - enjoy your breakfast on the beach side, or have a beach walk before breakfast, and later do own activities such as water sport or discover various craftsmanship’s in numerous shops.",
+        "hotel":"Puri SANTRIAN Resort Sanur"
+    },
+    {
+        "day": 8,
+        "image_url":"https://lh3.googleusercontent.com/proxy/6JHr8q3NR-lqtzIr3JPQTtNElKunjRj6gzW8YDRX0tSoxjTyS5UBrrZiglmvrPsYMi5hyVod4GhINMjb6Mhoi22etGKwKHSFXa0eNR80Z6AMo2d0gkastLgG8dri",
         "name":"EAST Bali Explore",
         "descriptions":"After your breakfast at the hotel you start not too late and you will visit today the eastern part of the island, beginning with a visit of the royal city of Klungkung and its famous ancient royal court hall Kerta Gosa, beautifully carved and decorated, the underside of the roof is covered with frescoes depicting the punishments awaiting the wrongdoer in hell. The court hall is built on high stone platforms so that the trials were visible to all. A drive up the hills leads to the old weaving village of Sidemen, located in the middle of beautiful rice terraces and you will have the chance to visit a family at their private home who still do the weaving of the ikat cloths in the traditional centuries-old way.  Afterwards lunch will be served in a local restaurant and further up the hill you will reach to the most important and sacred temple for all Balinese, the Besakih Temple, also called the Mother Temple, revered to by all Balinese as the biggest and most sacred temple. The temple is located right on the slopes of the holy mountain Gunung Agung at 999 m. Besakih is actually a complex made up of twenty-two temples that sit on parallel ridges. It has stepped terraces and flights of stairs which ascend to a number of courtyards and brick gateways that lead up to the main spire Meru structure, which is called Pura Penataran Agung. All this is aligned along a single axis and designed to lead the spiritual upward and closer to the mountain Gunung Agung which is considered sacred. The way back to the resort leads through picturesque villages, offers stunning scenery, forests, rice fields and terraces, volcanoes, all linked to fast flowing rivers and deep ravines. Trip continues to visit one of most interesting villages in Bali, Tenganan. This village is an ancient fortress village and perhaps one of the most secluded and conservative villages on the island of Bali, protected by a strict code of isolationism, this ‘original’Bali Aga village has retained its unique culture and customs over the centuries.",
         "hotel":"Puri SANTRIAN Resort Sanur"
     },
     {
-        "day": 7,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "day": 9,
+        "image_url":"https://cdn.forevervacation.com/uploads/tour/uluwatu-kecak-dance-tour-half-day1742.jpg",
         "name":"Uluwatu and Kecak Dance",
         "descriptions":"Relax in the morning then late afternoon drive to southwestern part of the island to see well-known Balinese Dance, Kecak dance, against the spectacular backdrop of Uluwatu temple, perched on Bali’s cliffs in the southwestern part of the island. This is an excellent way to learn more about the fabulous Balinese dances. Sometimes called the monkey dance after the animals represented by the chorus, the Keçak gets its Balinese name from the hypnotic chattering sounds made by the a cappella choir. Chanting nothing more than ‘tjak tjak tjak tjak tjak ‘, the chorus of fifty or more men uses seven different rhythms to create the astonishing music that accompanies the drama. Bare-chested, wearing black-and-white checked cloth around their waists and a single red hibiscus behind the ear, the men sit cross-legged in tight concentric circles, occasionally swaying and clapping their hands in unison. The narrative is taken from a core episode of the Ramayana, focused on the kidnapping of Sita by the demon king Rawana. The Keçak was invented in 1931 by the dancer I Wayan Limbak, who adapted the chants from the sacred trance dances.",
         "hotel":"Furama Xclusive Villa Ubud"
     },
     {
-        "day": 8,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
-        "name":"Welcome to Bali",
-        "descriptions":"Welcome to Bali! Upon your arrival at Ngurah Rai International Airport of Denpasar you will be met by our representative at arrival terminal who will hold paging board with your name on it. Your private car is waiting for you to bring you to your resort which is located in Ubud. Start your Bali experience already on the way to your resort and spend the rest of the day unpacking and exploring the beautiful surroundings of your resort.",
-        "hotel":"Puri SANTRIAN Resort Sanur"
-    },
-    {
-        "day": 9,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "day": 10,
+        "image_url":"https://www.indonesia.travel/content/dam/indtravelrevamp/en/destinations/bali-nusa-tenggara/sanurbeach_1.jpg",
         "name":"Relax by the Beach",
         "descriptions":"Have the whole day on your own - enjoy your breakfast on the beach side, or have a beach walk before breakfast, and later do own activities such as water sport or discover various craftsmanship’s in numerous shops",
         "hotel":"Puri SANTRIAN Resort Sanur"
     },
     {
+        "day": 11,
+        "image_url":"https://lh3.googleusercontent.com/proxy/kbsdTNckpeDOhfMG2mu9jaHP-Nq-kEat-seoi2yJqHXQVpvCZVr8tdELgTTk-Q-Mw96iDo2RZ5Fj8A80ZN_w82TsBHAWcyz9KxS9",
+        "name":"Departure",
+        "descriptions":"Free at leisure until departure time, meet your guide at hotel lobby for transfer to the airport for your onwards flight.",
+        "hotel":""
+    },
+    {
+        "day": 1,
+        "image_url":"https://a.cdn-hotels.com/gdcs/production161/d644/bf88dd30-dc5c-4e05-9465-1b0e9532012d.jpg",
+        "name":"Denpasar airport – Candidasa / Manggis",
+        "descriptions":"!  Welcome to Bali! Upon your arrival at Ngurah Rai International Airport of Denpasar you will be met by our representative at arrival terminal who will hold paging board with your name on it. Your private car is waiting for you to bring you to your resort which is located in Candidasa, East of Bali. Check-in and free at leisure. ",
+        "hotel":"Water Garden Hotel Candidasa (Deluxe Bungalow)"
+    },
+    {
+        "day": 2,
+        "image_url":"https://images.thrillophilia.com/image/upload/s--FiyIs5qN--/c_fill,f_auto,fl_strip_profile,h_446,q_auto,w_750/v1/attractions/images/000/002/635/original/Bali_pura-luhur-lempuyang.jpg.jpg?1499436239",
+        "name":"Candidasa",
+        "descriptions":"First impression of East Bali. Morning visit to the village of Tenganan, home of the original Balinese and one of the few places, where cloth is still woven by the double ikat method. Textiles produced in this manner, are expensive and believed to protect their owners from disease. Next we drive past beautiful rice terraces and take a dip at the spring fed pools of Tirtagangga, a veritable water playground designed by 6 princes in the Royal Family of Karangasem as a resting place. The exotic pools and water fountains sustained some damage during the eruptions of Mt. Agung, but the water gardens remain as serene, and tempting as ever, to the weary traveler. Next stop at Amlapura, home to a fascinating palace, built in the 19th century and once the home of the raja`s of East Bali. It is well restored and has numerous references to a time and age when God-Kings ruled much of Bali. Some of them even conquered parts of Lombok. A unique architecture combines Balinese, Chinese and European elements. Return to hotel in the afternoon. ",
+        "hotel":"Water Garden Hotel Candidasa (Deluxe Bungalow)"
+    },
+    {
+        "day": 3,
+        "image_url":"https://tempatwisatadibali.info/wp-content/uploads/2018/02/Pura-Agung-Besakih-Karangasem-Bali-1.jpg",
+        "name":"Candidasa – Lovina",
+        "descriptions":"Depart to the north coast of Bali. First we will stop in Kusamba. Thousands of bats hang above the entrance to a cave and a temple. According to a local legend, the bats provide food for a giant snake which is said to live in the cave. Not far beyond Goa Lawah lies the fishing village of Kusamba with its dramatic black sand beaches. Drive through Sidemen, continue to Pura Besakih, aptly named the Mother Temple, a sprawling complex of numerous shrines and temples. Some of the bigger ones are obviously dedicated to the Hindu trinity Shiva, Brahma and Vishnu, while the smaller ones seem to relate to various castes or even the different regions of Bali. Ceremonies held here are feasts for the eyes and attended by thousands of people. The temple is built against the slope of Mount Agung. Drive small mountainous roads to Penelokan. Enjoy the marvelous vistas over Lake Batur, Gunung Agung, and Mount Batur, a smoldering volcanic cone right in the middle of a large caldera. From here we drive down all the way to Singaraja and visit Pura Beji en route, one of the most important subak temples of North Bali. Reach Lovina in late afternoon.",
+        "hotel":"LOVINA Hotel (Deluxe Studio)"
+    },
+    {
+        "day": 4,
+        "image_url":"https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e7/bc/c7.jpg",
+        "name":"Lovina – Munduk",
+        "descriptions":"Today we visit the Buddhist monastery and hot springs in Banjar. This wihara is the residence of Bali’s only Buddhist monk and it plays a central role in Buddhist religious life and education. Opened in 1971, it replaces another founded in Banjar in 1958. It combines architectural and iconographic elements found throughout the Buddhist world. Quiet, cool, and set high in the hills, it commands a view down to the ocean. Then you will drive along the north coast to Serririt, from here our road leads us past rice fields, coffee and clove plantations to a sleepy mountain village, Munduk, the perfect spot to make short, pleasant hikes and take in the beauty of North Bali. A stroll past forests, idyllic rice fields, lush waterfall and blooming is quite pleasant at an altitude of some 1.000m. The community of Munduk actively supports projects emphasizes environmental preservation. This afternoon we will take you for a scenic and easy walk through fantastic rice fields and small settlements.",
+        "hotel":"Puri Lumbung Cottage (Standard Cottage)"
+    },
+    {
+        "day": 5,
+        "image_url":"https://cdn.bobobox.co.id/blog/wp-content/uploads/2020/02/pesonatravel-1-750x430.jpg",
+        "name":"Tamblingan Lake Hike",
+        "descriptions":"After relax breakfast, drive south while enjoying beautiful vistas on the on the coffee & clove growing area of Munduk. On the rim of one of the lakes of Central Bali, you prepare for a descent into the rain forest. Most of time you’ll walk downhill, learn how many of the local tropical plants have a medicinal use. Occasionally you unexpectedly pass by a forgotten temple on a site, reclaimed from the forest. The views to the lake and the surrounding lush rain forest is inspiring. A short boat ride on a traditional wooden canoe brings you to the other lake shore. Very few people venture out into this direction. During your trip it is so quiet you can hear the birds singing. Forest slopes seal off this area from the rest of the world. On last leg of the trip, stroll along a primitive settlement, attached to a beautiful designed Balinese temple. The uneven roofs of its meru, rise from behind the temple`s twin gate entrance. Your vehicle is waiting to take you to Pura Ulun Danu, a place of worship for the Goddess of shores of Lake Tamblingan, the source of water for Bali. Combining typical Hindu and Buddhist temple architecture, it is one of the most photographed temples of Bali. It acquired the status of a kayangan jagat or directional temple, meaning it is revered by all Balinese across the island. At about 1.200 meters above sea level, with mighty Mount Catur rising from its eastern shore, the climate is pleasantly cool all year round. Along wide highlands and strawberry farms, the road leads back to your hotel.",
+        "hotel":"Puri Lumbung Cottage (Standard Cottage)"
+    },
+    {
+        "day": 6,
+        "image_url":"https://cdn.bobobox.co.id/blog/wp-content/uploads/2020/02/pesonatravel-1-750x430.jpg",
+        "name":"Munduk - Ubud",
+        "descriptions":"Depart to the central of Bali, drive along Lake Buyan and Tamblingan to Bedugul, nestled on the shores of Lake Bratan. This giant lake effectively fills the crater, formed thousands of years ago by seismic blast of an extinct volcano. Dense pine forests tumble down the slopes of Mount Bratan to the calm shoreline dotted with holy shrines. The biggest and most spectacular of these is the peaceful and sacred water temple of Ulun Danu. Continue to the small village of Candi Kuning which is situated above the southern shores of Lake Bratan. Its daily market is small but extremely diverse and colorful. It offers a vast range of fruit, spices and plants, including orchids. Our last visit will be at Mengwi, home of the splendid Taman Ayun. The 17th century royal temple sheds a magnificent light on the secrets of traditional Balinese temple architecture. Very few other temples were constructed along such 'ideal' lines. Three terraces blend harmoniously into one another, each of them representing different worlds, dedicated to the Negative and Positive Forces in the universe. Proceed to your hotel in Ubud in the afternoon, check in and rest of the day at leisure.",
+        "hotel":"Furama Xclusive Villa Ubud (Lagoon Pool Villa)"
+    },
+    {
+        "day": 7,
+        "image_url":"https://pix10.agoda.net/hotelImages/3155616/-1/4f368bd270f79cd2cfb648b9bc69f695.jpg?s=1024x768",
+        "name":"Relax in Ubud",
+        "descriptions":"Have the whole day on your own - enjoy your breakfast surrounded by Rice field and later do own activities such as discover various craftsmanship’s in numerous shops.",
+        "hotel":"Furama Xclusive Villa Ubud (Lagoon Pool Villa)"
+    },
+    {
+        "day": 8,
+        "image_url":"https://www.pegipegi.com/travel/wp-content/uploads/2017/10/shutterstock_130548068.jpg",
+        "name":"Tanah Lot Temple and move to Sanur beach",
+        "descriptions":"A last breakfast in Ubud and at noon, get slowly ready for your transfer to beach in the southern part of Bali, the “place to go, the place to be” at the moment – not a transfer, a journey through small roads to Tanah Lot Temple. For the Balinese, Pura Tanah Lot is one of the most important and venerated places of their beloved island. Together with some other landmark temples along the western seaboard, it is closely associated with the arrival and spread of Hinduism on Bali. The iconic temple is built on a rock right in the surf of the incessantly pounding Indian Ocean. The temple, consisting of several shrines protected by poisonous black snakes, is fairly modest but as the tide rushes in and the islet becomes completely surrounded by water, the place becomes a mysterious spot. Afterwards continue drive to check-in at your hotel in Sanur.",
+        "hotel":"Puri SANTRIAN Resort Sanur (Superior Room)"
+    },
+    {
+        "day": 9,
+        "image_url":"https://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/4/2019/05/Sanur-Beach-Bali.jpg",
+        "name":"Relax by the Beach",
+        "descriptions":"Have the whole day on your own - enjoy your breakfast on the beach side, or have a beach walk before breakfast, and later do own activities such as water sport or discover various craftsmanship’s in numerous shops.",
+        "hotel":"Puri SANTRIAN Resort Sanur (Superior Room)"
+    },
+    {
         "day": 10,
-        "image_url":"https://asset.kompas.com/crops/1COBwNZR69INVCiP9EdwHF3dh0Q=/0x0:1000x667/750x500/data/photo/2020/06/29/5ef9579aa9e6a.jpg",
+        "image_url":"https://cdn.forevervacation.com/uploads/tour/uluwatu-kecak-dance-tour-half-day1742.jpg",
+        "name":"Move to Sanur and Uluwatu and Kecak Dance",
+        "descriptions":"Relax in the morning. Late afternoon drive to southwestern part of the island to see well-known Balinese Dance, Kecak dance, against the spectacular backdrop of Uluwatu temple, perched on Bali’s cliffs in the southwestern part of the island. This is an excellent way to learn more about the fabulous Balinese dances. Sometimes called the monkey dance after the animals represented by the chorus, the Keçak gets its Balinese name from the hypnotic chattering sounds made by the a cappella choir. Chanting nothing more than ‘tjak tjak tjak tjak tjak ‘, the chorus of fifty or more men uses seven different rhythms to create the astonishing music that accompanies the drama. Bare-chested, wearing black-and-white checked cloth around their waists and a single red hibiscus behind the ear, the men sit cross-legged in tight concentric circles, occasionally swaying and clapping their hands in unison. The narrative is taken from a core episode of the Ramayana, focused on the kidnapping of Sita by the demon king Rawana. The Keçak was invented in 1931 by the dancer I Wayan Limbak, who adapted the chants from the sacred trance dances",
+        "hotel":"Puri SANTRIAN Resort Sanur (Superior Room)"
+    },
+    {
+        "day": 11,
+        "image_url":"https://lh3.googleusercontent.com/proxy/kbsdTNckpeDOhfMG2mu9jaHP-Nq-kEat-seoi2yJqHXQVpvCZVr8tdELgTTk-Q-Mw96iDo2RZ5Fj8A80ZN_w82TsBHAWcyz9KxS9",
         "name":"Departure",
         "descriptions":"Free at leisure until departure time, meet your guide at hotel lobby for transfer to the airport for your onwards flight.",
         "hotel":""
     }
+    
+
 ]

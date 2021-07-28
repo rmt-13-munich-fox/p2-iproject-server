@@ -11,13 +11,13 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-  let data = require('../db/country.json')
-    data.forEach(el => {
-      el.createdAt = new Date()
-      el.updatedAt = new Date()
-    })
-    // console.log(data)
-    return queryInterface.bulkInsert('Countries', data, {})
+      let data = require('../db/travel.json')
+      data.forEach(el => {
+        el.createdAt = new Date()
+        el.updatedAt = new Date()
+      })
+      // console.log(data)
+      return queryInterface.bulkInsert('Travels', data, {})
   },
 
   down: (queryInterface, Sequelize) => {
@@ -27,6 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete('Countries', null, {})
+    return queryInterface.bulkDelete('Travels',null, {})
   }
 };

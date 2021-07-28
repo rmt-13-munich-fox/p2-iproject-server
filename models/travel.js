@@ -11,9 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Travel.hasMany(models.Story, {
-        foreignKey: "TravelId"
-      })
       Travel.hasMany(models.Plan, {
         foreignKey: "TravelId"
       })
@@ -28,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    descriptions: {
+    durations: {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
@@ -36,14 +33,38 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    image: {
+    image_url: {
       type: DataTypes.STRING,
       validate: {
         isUrl: {
           msg: "please input image URL"
         }
       }
-    }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      validate: {
+        notEmpty: {
+          msg: "please input price"
+        }
+      }
+    },
+    inclusive: {
+      type: DataTypes.TEXT,
+      validate: {
+        notEmpty: {
+          msg: "please input inclusive"
+        }
+      }
+    },
+    exclusive:{
+      type: DataTypes.TEXT,
+      validate: {
+        notEmpty: {
+          msg: "please input exclusive"
+        }
+      }
+    },
   }, {
     sequelize,
     modelName: 'Travel',

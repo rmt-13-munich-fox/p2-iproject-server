@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Plan.belongsTo(models.Travel,{
+      Plan.belongsTo(models.Travel, {
         foreignKey: "TravelId"
       })
     }
@@ -48,6 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    hotel: DataTypes.STRING,
     TravelId: DataTypes.INTEGER
   }, {
     sequelize,

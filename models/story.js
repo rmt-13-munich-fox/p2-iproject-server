@@ -11,9 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Story.belongsTo(models.Travel, {
-        foreignKey: "TravelId"
-      })
     }
   };
   Story.init({
@@ -25,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    description: {
+    descriptions: {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
@@ -33,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    image: {
+    image_url: {
       type: DataTypes.STRING,
       validate: {
         isUrl: {
@@ -41,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    TravelId: DataTypes.INTEGER
+    
   }, {
     sequelize,
     modelName: 'Story',

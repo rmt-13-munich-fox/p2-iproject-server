@@ -5,6 +5,7 @@ const {  User } = require('../models/index')
 
 
 const authentication = (req,res,next) => {
+    console.log('masuk')
     const { access_token } = req.headers
     if(access_token){
         try {
@@ -17,7 +18,7 @@ const authentication = (req,res,next) => {
                 .then(data => {
                     if(!data){
                         next({
-                            code: 401,
+                            code: 403,
                             msg: "Invalid JWT"
                         })
                     } else {
@@ -31,14 +32,14 @@ const authentication = (req,res,next) => {
             
         } catch (error) {
             next({
-                code: 401,
+                code: 403,
                 msg: "Invalid JWT"
             })
         }
 
     }else {
         next({
-            code: 400,
+            code: 403,
             msg: "Token required"
         })
     }
