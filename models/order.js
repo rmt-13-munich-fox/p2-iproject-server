@@ -15,7 +15,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Order.init({
-    customerName: DataTypes.STRING,
+    customerName: { 
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Please insert customer name'
+        }
+      }
+    },
     AdminId: DataTypes.INTEGER
   }, {
     sequelize,
