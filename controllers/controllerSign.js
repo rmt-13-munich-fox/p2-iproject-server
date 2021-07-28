@@ -69,23 +69,23 @@ class Sign{
                     name: err.name,
                     message: err.message
                 })
+            } else {
+                next({
+                    name: "InternalErrorServer",
+                    message: "Internal Server Error"
+                })
             }
-            next({
-                name: "InternalErrorServer",
-                message: "Internal Server Error"
-            })
         }
     }
     static async editUser(req, res, next){
         try{
             const id = req.params.id
-            let {username, email, password, address, quotes} = req.body
+            let {username, email, address, quotes} = req.body
             const { originalname } = req.file;
             const buffer = req.file.buffer.toString("base64");
             let imgUrl = await getAxios(originalname, buffer)
-            password = hashSync(password)
             imgUrl = imgUrl.url
-            let dataUser = await User.update({username, email, password, address, quotes, imgUrl}, {where: {id}})
+            let dataUser = await User.update({username, email, address, quotes, imgUrl}, {where: {id}})
             if(dataUser){
                 res.status(201).json({message: 'success to update'})
             } else {
@@ -93,6 +93,40 @@ class Sign{
             }
         }
         catch(err){
+            console.log(err);
+            if(err.code){
+                next({
+                    name: err.name,
+                    message: err.message
+                })
+            }
+            if(err.message){
+                next({
+                    name: "ValidationError",
+                    message: err.message
+                })
+            }else{
+                next({
+                    name: "InternalErrorServer",
+                    message: "Internal Server Error"
+                })
+            }
+        }
+    }
+    static async fetchUser (req, res, next){
+        try {
+            const id = req.user.id
+            const data = await User.findByPk(id)
+            if(data){
+                res.status(200).json(data)
+            } else{
+                throw {
+                    code: 404,
+                    message: "data cannot be found",
+                    name: "DataCannotBeFound",
+                  };
+            }
+        } catch (err) {
             console.log(err);
             if(err.code){
                 next({

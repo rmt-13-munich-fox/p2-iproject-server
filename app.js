@@ -1,11 +1,15 @@
-require('dotenv').config()
+if(process.env.NODE_ENV === "development"){
+    require('dotenv').config()
+}
+// require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 const http = require('http');
 const server = http.createServer(app);
 const router = require('./router')
-const {Log, Message, User} = require('./models')
+const {Log, Message, User } = require('./models')
+const errorHandling = require('./middleware/error')
 
 const io = require("socket.io")(server, {
   cors: {
@@ -16,14 +20,10 @@ const io = require("socket.io")(server, {
 
 const cors = require('cors')
 
-
 app.use(cors())
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/index.html');
-// });
 app.use(router)
 
 io.on('connection', async (socket) => {
@@ -33,16 +33,17 @@ io.on('connection', async (socket) => {
       const UserId = data.id
       const message = data.message
       await Message.create({UserId, message})
-      const response = await Message.findAll()
+      const response = await Message.findAll({
+        include: [{model: User}]
+      })
     io.emit('broadcast', response)
   })
 
   socket.on('Login', async (user) => {
-    console.log(user);
-    try {
-      const UserId = user.id
+    // console.log(user);
+      const UserId = user.id || req.user.id
       const status = user.status
-      const data = Log.findByOne({
+      const data = await Log.findOne({
         where: {UserId}
       })
       if(data){
@@ -51,13 +52,14 @@ io.on('connection', async (socket) => {
       }else{
         await Log.create({UserId, status})
       }
-    } catch (err) {
-      console.log(err);
-    }
-    io.emit('user', user)
+      const log = await Log.findAll({
+        include: [{model: User}]
+      })
+    io.emit('client', log)
   })
 });
 
+app.use(errorHandling)
 
 server.listen(port, () => {
   console.log('listening on *:' + port);

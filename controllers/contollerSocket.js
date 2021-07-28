@@ -1,11 +1,14 @@
-const {User, Car, Favorite} = require('../models')
+const {Message, Log, User} = require('../models')
 
-class Cars{
-    static async fetchData(req, res, next){
+class Socket{
+    static async fetchDataMessage(req, res, next){
         try {
-            const data = await Car.findAll()
+            const data = await Message.findAll({
+                include: [{model: User}]
+            })
             res.status(200).json(data)
         } catch (err) {
+            // console.log(err);
             if(err.code){
                 next({
                     name: err.name,
@@ -19,12 +22,14 @@ class Cars{
             }
         }
     }
-    static async detailData(req, res, next){
+    static async fetchDataLog(req, res, next){
         try {
-            const {id} = req.params
-            const data = await Car.findByPk(id)
+            const data = await Log.findAll({
+                include: [{model: User}]
+            })
             res.status(200).json(data)
         } catch (err) {
+            // console.log(err)
             if(err.code){
                 next({
                     name: err.name,
@@ -40,4 +45,4 @@ class Cars{
     }
 }
 
-module.exports = Cars
+module.exports = Socket

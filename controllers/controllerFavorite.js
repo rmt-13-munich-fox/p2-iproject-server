@@ -11,11 +11,17 @@ class Favorites{
             // console.log(data);
             res.status(200).json(data)
         } catch (err) {
-            console.log(err);
-            next({
-                code: err.code,
-                message: err.message
-            })
+            if(err.code){
+                next({
+                    name: err.name,
+                    message: err.message
+                })
+            } else {
+                next({
+                    name: "InternalErrorServer",
+                    message: "Internal Server Error"
+                })
+            }
         }
     }
     static async addFavorite(req, res, next){
@@ -39,11 +45,18 @@ class Favorites{
                 }
             }
         } catch (err) {
-            console.log(err);
-            next({
-                code: err.code,
-                message: err.message
-            })
+            // console.log(err);
+            if(err.code){
+                next({
+                    name: err.name,
+                    message: err.message
+                })
+            } else {
+                next({
+                    name: "InternalErrorServer",
+                    message: "Internal Server Error"
+                })
+            }
         }
     }
     static async removeFavorite(req, res, next){
@@ -60,11 +73,18 @@ class Favorites{
                   };
             }
         } catch (err) {
-            console.log(err);
-            next({
-                code: err.code,
-                message: err.message
-            })
+            // console.log(err);
+            if(err.code){
+                next({
+                    name: err.name,
+                    message: err.message
+                })
+            } else {
+                next({
+                    name: "InternalErrorServer",
+                    message: "Internal Server Error"
+                })
+            }
         }
     }
 }
