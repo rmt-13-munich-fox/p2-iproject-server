@@ -9,9 +9,9 @@ const io = require("socket.io")(httpServer);
 
 io.on("connection", (socket) => {
   console.log('user Connected')
-  socket.on('sendMessage', (data) => {
+  socket.on('sendMessage', (chat, username) => {
 
-    io.emit('broadcastMessage', data)
+    io.emit('broadcastMessage', chat, username)
   })
 })
 
