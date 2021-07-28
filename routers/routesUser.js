@@ -5,6 +5,8 @@ routes.post('/register', Controller.register)
 
 routes.post('/login', Controller.login)
 
+routes.post('/login/facebook', Controller.oAuth)
+
 
 
 module.exports = routes
