@@ -311,7 +311,6 @@ _Response (500 - Internal server error)_
 }
 ```
 ---
-
 ### POST /neworder/:menuid
 > Get orders by id
 
@@ -340,7 +339,6 @@ _Response (201)_
     "createdAt": "2021-07-27T13:13:04.856Z"
 }
 ```
-
 ### POST /neworder/ordercustomer
 > Post new order
 
@@ -370,6 +368,30 @@ _Response (201)_
     "createdAt": "2021-07-27T13:13:04.856Z"
 }
 ```
+### POST /neworder/currency
+> Convert currency
+
+_Request Header_
+```
+{
+  "access_token": "<your access token>"
+}
+```
+_Request Body_
+```
+{
+  "currency": "usd",
+  "totalPrice": 14000
+}
+```
+
+_Response (201)_
+```
+{
+    1
+}
+```
+---
 
 ### POST /register
 >Register User
