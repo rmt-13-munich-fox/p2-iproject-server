@@ -1,0 +1,18 @@
+[
+    {
+        "name":"Ubud and Beach Stay",
+        "durations":"11 day / 10 nights",
+        "image_url":"https://whatsnewindonesia.com/wp-content/uploads/2020/07/Ubud.jpg",
+        "price": 1369,
+        "inclusive": "Private transfers and tours with air conditioned car or minivan, Services of an English-speaking guide during tours and transfers, Meals as specified in the itinerary, Activity as mentioned in the itinerary,  Entrance fees, parking fees, donations throughout the course of the program, Accommodation at mentioned hotels based on sharing in double / twin including daily breakfast, VAT",
+        "exclusive":"Not mentioned services, Not mentioned meals, Drinks, personal expenses, Tip for guide and driver - tipping is a common way of showing your appreciation and highly recommended; guidelines for tipping will be inserted in the documentation your client(s) will receive when arriving in Indonesia, Insurance, Domestic flight"
+    },
+    {
+        "name":"Bali roundtrip",
+        "durations":"11 day / 10 nights",
+        "image_url":"https://www.lotusbungalows.com/wp-content/uploads/2017/10/Tirta-Gangga-1200x800.jpg",
+        "price": 1210,
+        "inclusive": "Private transfers and tours with air conditioned car or minivan, Services of an English-speaking guide during tours and transfers, Meals as specified in the itinerary, Activity as mentioned in the itinerary,  Entrance fees, parking fees, donations throughout the course of the program, Accommodation at mentioned hotels based on sharing in double / twin including daily breakfast, VAT",
+        "exclusive":"Not mentioned services, Not mentioned meals, Drinks, personal expenses, Tip for guide and driver - tipping is a common way of showing your appreciation and highly recommended; guidelines for tipping will be inserted in the documentation your client(s) will receive when arriving in Indonesia, Insurance, Domestic flight"
+    }
+]
