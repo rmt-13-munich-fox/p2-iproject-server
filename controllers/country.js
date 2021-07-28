@@ -58,9 +58,16 @@ class Controller {
                 }
             })
             .then(data => {
-                res.status(201).json({message: `successfully deleted Country with ID ${id}`})
+                if(data){
+                    res.status(201).json({message: `successfully deleted Country with ID ${id}`})
+                } else {
+                    next({
+                        code: 404
+                    })
+                }
             })
             .catch(err => {
+                console.log(err)
                 if(err.errors === undefined){
                     next({
                         code: 500
