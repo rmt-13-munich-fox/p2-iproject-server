@@ -18,9 +18,20 @@ app.use(express.json())
 app.use("/", router)
 
 io.on('connection', (socket) => {
-    console.log('someone connected');
+    // console.log('someone connected');
+    socket.on('newUser', (data => {
+      // console.log(data);
+      socket.broadcast.emit("newLogin", data)
+      io.emit("updateUser")
+    })) 
     socket.on("sendMessage", (data) => {
-        console.log(data, "ini data");
+        // console.log(data, "ini data");
+        // io.emit("broadcastMessage", data)
+        socket.broadcast.emit("broadcastMessage", data)
+    })
+    socket.on("leaveUser", (data) => {
+      socket.broadcast.emit("logoutUser", data)
+      io.emit("updateUser")
     })
 })
 

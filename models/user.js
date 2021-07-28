@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      User.belongsToMany(models.Chat, {through: "UserChat", foreignKey: "UserId"})
+      User.hasMany(models.Chat)
     }
   };
   User.init({
-    allowNull: false,
-    unique: true,
     username: {
       type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,  
       validate: {
         notNull: {
           args: true,

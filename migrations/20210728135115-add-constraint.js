@@ -2,12 +2,12 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.addConstraint('UserChats', {
-      fields: ['ChatId'],
+    return queryInterface.addConstraint('Chats', {
+      fields: ['UserId'],
       type: 'foreign key',
-      name: 'custom_fkey_ChatId',
+      name: 'custom_fkey_UserId',
       references: { //Required field
-        table: 'Chats',
+        table: 'Users',
         field: 'id'
       },
       onDelete: 'cascade',
@@ -16,6 +16,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.removeConstraing('UserChats', 'custom_fkey_ChatId')
+    return queryInterface.removeConstraint('Chats', "custom_fkey_UserId")
   }
 };
