@@ -48,7 +48,7 @@ class Sign{
                 throw {code: 400, message: "Email or Password cannot be empty", name:"ValidationError"}
             } else{
                 let dataUser = await User.findOne({where: {email: email}})
-                console.log(dataUser);
+                // console.log(dataUser);
                 if(dataUser){
                     let dataPassword = compareSync(password, dataUser.password)
                     if(dataPassword){
@@ -63,7 +63,7 @@ class Sign{
             }
         }
         catch(err){
-            console.log(err);
+            // console.log(err);
             if(err.code){
                 next({
                     name: err.name,
@@ -93,7 +93,7 @@ class Sign{
             }
         }
         catch(err){
-            console.log(err);
+            // console.log(err);
             if(err.code){
                 next({
                     name: err.name,
@@ -127,7 +127,7 @@ class Sign{
                   };
             }
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             if(err.code){
                 next({
                     name: err.name,

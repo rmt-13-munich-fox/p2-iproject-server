@@ -29,7 +29,7 @@ app.use(router)
 io.on('connection', async (socket) => {
   console.log('a user connected');
   socket.on('sendMessage', async (data) => {
-    console.log(data);
+    // console.log(data);
       const UserId = data.id
       const message = data.message
       await Message.create({UserId, message})
