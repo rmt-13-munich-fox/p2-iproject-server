@@ -9,7 +9,7 @@ const { News, Sentiment } = require("../models");
 // Months: 0-11 (Jan-Dec)
 // Day of Week: 0-6 (Sun-Sat)
 const job = new CronJob(
-  "*/5 * * * *",
+  "*/8 * * * *",
   function () {
     let news;
     getLatestNews()
@@ -48,14 +48,12 @@ const job = new CronJob(
           return News.bulkCreate(news); // optimize insert all news
         }
       })
-      .then((news) => {
-        return News.findAll();
-      })
-      .then((news) => {  // optimize insert also the sentiment of each news >,<
+      .then((news) => { // TODO FIX DUPLICATEEEEE
         const sentiments = [];
-        news.forEach((el) => {
+        // console.log(news) // ambil el.dataValues
+        news.forEach((el)=>{
           sentiments.push(getSentiment(el.dataValues.description,el.dataValues.id));
-        });
+        })
         return Sentiment.bulkCreate(sentiments);
       })
       .then((sentiment) => {

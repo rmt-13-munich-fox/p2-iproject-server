@@ -8,7 +8,7 @@ const getKeywordNews = (keyword)=>{
     }
   })
   .then(({data})=>{
-    return data
+    return data.news
   })
   .catch(err=>console.log(err))
 }

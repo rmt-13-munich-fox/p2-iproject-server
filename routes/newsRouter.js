@@ -4,9 +4,11 @@ const {authentification} = require('../middlewares/auth')
 const job = require('../helpers/cronJob')
 
 // job.start()
-router.use(authentification)
 router.get('/latest-news',Controller.getLatestNews)
-router.get('/keywords/:keywords',Controller.searchKeywords)
+router.get('/latest-news/all',Controller.getAllLatestNews)
+router.post('/keywords',Controller.searchKeywords)
+router.post('/sentiment-analysis',Controller.sentimentAnalyze)
+router.use(authentification)
 router.get('/bookmark',Controller.getBookmarks)
 router.post('/bookmark/:id',Controller.addBookmark)
 // Authorization
