@@ -13,7 +13,11 @@ class Controller {
                 order: [['day', 'ASC']]
             })
             .then(data => {
-                res.status(200).json(data)
+                if(data){
+                    res.status(200).json(data)
+                } else {
+                    next({code: 404})
+                }
             })
             .catch(err => {
                 next({code: 500})
