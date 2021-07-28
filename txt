@@ -1,0 +1,12 @@
+https://bc-destination-server.herokuapp.com/ |
+https://git.heroku.com/bc-destination-server.git
+
+Created postgresql-rigid-26249 as DATABASE_URL
+Use heroku addons:docs heroku-postgresql to vi
+
+Setting SECRET and restarting ⬢ bc-destination-server... done, v5
+SECRET: rahasia
+Darrels-iMac:p2-iproject-server Darrelgiovanni$
+
+set git remote heroku to https://git.heroku.com/bc-destination-server.git
+Darrels-iMac:p2-iproject-server Darrelgiovanni$ 
