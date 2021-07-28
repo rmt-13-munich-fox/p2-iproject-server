@@ -15,14 +15,14 @@ module.exports = {
      {
      email: "admin@mail.com",
      username: "admin",
-     password: "adminmarmut",
+     password: "$2b$07$ZRWHHP.9qw22MZO1rKLd2ueITd33V2wkC257EvmcmKSD/1WiMNWBu",
      createdAt: new Date(),
      updatedAt: new Date()
      },
      {
       email: "user1@mail.com",
       username: "user1",
-      password: "user1",
+      password: "$2b$07$ZRWHHP.9qw22MZO1rKLd2ueITd33V2wkC257EvmcmKSD/1WiMNWBu",
       createdAt: new Date(),
       updatedAt: new Date()
     }

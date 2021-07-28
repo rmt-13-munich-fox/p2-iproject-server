@@ -14,8 +14,17 @@ module.exports = {
       gender: {
         type: Sequelize.STRING
       },
+      imgURL: {
+        type: Sequelize.STRING
+      },
       age: {
         type: Sequelize.INTEGER
+      },
+      submittedBy: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

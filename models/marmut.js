@@ -10,13 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Marmut.belongsTo(models.User)
     }
   };
   Marmut.init({
     name: DataTypes.STRING,
     gender: DataTypes.STRING,
-    age: DataTypes.INTEGER
+    imgURL: DataTypes.STRING,
+    age: DataTypes.INTEGER,
+    submittedBy: DataTypes.STRING,
+    description: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Marmut',
