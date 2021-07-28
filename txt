@@ -10,3 +10,22 @@ Darrels-iMac:p2-iproject-server Darrelgiovanni$
 
 set git remote heroku to https://git.heroku.com/bc-destination-server.git
 Darrels-iMac:p2-iproject-server Darrelgiovanni$ 
+
+
+remote: -----> Compressing...
+remote:        Done: 36.7M
+remote: -----> Launching...
+remote:        Released v6
+remote:        https://bc-destination-server.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/bc-destination-server.git
+ * [new branch]      main -> main
+Darrels-iMac:p2-iproject-server Darrelgiovanni$ 
+
+remote: Verifying deploy... done.
+To https://git.heroku.com/bc-destination-server.git
+   4775a2a..9f413dd  main -> main
+
+
+   https://bc-destination-app.web.app
