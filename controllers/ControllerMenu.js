@@ -6,7 +6,7 @@ class ControllerMenu {
             .then(data => {
                 res.status(200).json(data)
             })
-            .then(() => {
+            .catch(() => {
                 res.status(500).json({error: err.message || "Internal Server Error"})
             })
     }

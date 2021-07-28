@@ -89,7 +89,7 @@ _Response (500 - Internal server error)_
 ---
 
 ### POST /orders
-> Create new genre
+> Create new order
 
 _Request Header_
 ```
@@ -129,6 +129,112 @@ _Response (500 - Internal server error)_
 }
 ```
 ---
+### GET /orders
+> Find all customer order
+
+_Request Header_
+```
+{
+  "access_token": "<your access token>"
+}
+```
+_Request Body_
+```
+not needed
+```
+
+_Response (200)_
+```
+[
+    {
+        "id": 1,
+        "customerName": "Adul azis",
+        "AdminId": 1,
+        "createdAt": "2021-07-27T12:20:21.322Z",
+        "updatedAt": "2021-07-27T12:20:21.322Z",
+        "Menus": [
+            {
+                "id": 6,
+                "name": "Bakmi Ayam Yamin Komplit",
+                "img_url": "https://ik.imagekit.io/damario789/bakmipolim/Bakmi-Ayam-Yamin-Komplit_4l6eX59Ea.jpeg?updatedAt=1627366608841",
+                "price": 30000,
+                "isReady": true,
+                "CategoryId": 1,
+                "OrderMenus": {
+                    "id": 5,
+                    "OrderId": 1,
+                    "MenuId": 6,
+                    "quantityItem": 1,
+                    "quantityPrice": 30000,
+                    "createdAt": "2021-07-27T19:55:07.997Z",
+                    "updatedAt": "2021-07-27T19:55:07.997Z"
+                }
+            },
+            {
+                "id": 13,
+                "name": "Bakmi Ayam Shirataki Pangsit Goreng",
+                "img_url": "https://ik.imagekit.io/damario789/bakmipolim/Bakmi-Ayam-Shirataki-Pangsit-Goreng_usRGPoPIE.jpeg?updatedAt=1627366599319",
+                "price": 40000,
+                "isReady": true,
+                "CategoryId": 1,
+                "OrderMenus": {
+                    "id": 27,
+                    "OrderId": 1,
+                    "MenuId": 13,
+                    "quantityItem": 1,
+                    "quantityPrice": 40000,
+                    "createdAt": "2021-07-28T06:07:23.029Z",
+                    "updatedAt": "2021-07-28T06:07:23.029Z"
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "customerName": "Adul azam",
+        "AdminId": 1,
+        "createdAt": "2021-07-27T12:20:21.322Z",
+        "updatedAt": "2021-07-27T12:20:21.322Z",
+        "Menus": [
+            {
+                "id": 6,
+                "name": "Bakmi Ayam Yamin Komplit",
+                "img_url": "https://ik.imagekit.io/damario789/bakmipolim/Bakmi-Ayam-Yamin-Komplit_4l6eX59Ea.jpeg?updatedAt=1627366608841",
+                "price": 30000,
+                "isReady": true,
+                "CategoryId": 1,
+                "OrderMenus": {
+                    "id": 5,
+                    "OrderId": 1,
+                    "MenuId": 6,
+                    "quantityItem": 1,
+                    "quantityPrice": 30000,
+                    "createdAt": "2021-07-27T19:55:07.997Z",
+                    "updatedAt": "2021-07-27T19:55:07.997Z"
+                }
+            },
+            {
+                "id": 13,
+                "name": "Bakmi Ayam Shirataki Pangsit Goreng",
+                "img_url": "https://ik.imagekit.io/damario789/bakmipolim/Bakmi-Ayam-Shirataki-Pangsit-Goreng_usRGPoPIE.jpeg?updatedAt=1627366599319",
+                "price": 40000,
+                "isReady": true,
+                "CategoryId": 1,
+                "OrderMenus": {
+                    "id": 27,
+                    "OrderId": 1,
+                    "MenuId": 13,
+                    "quantityItem": 1,
+                    "quantityPrice": 40000,
+                    "createdAt": "2021-07-28T06:07:23.029Z",
+                    "updatedAt": "2021-07-28T06:07:23.029Z"
+                }
+            }
+        ]
+    },
+```
+---
+
 ### GET /orders/:orderid
 > Get orders by id
 
@@ -206,7 +312,7 @@ _Response (500 - Internal server error)_
 ```
 ---
 
-### POST /newOrder/:menuid
+### POST /neworder/:menuid
 > Get orders by id
 
 _Request Header_
@@ -219,6 +325,36 @@ _Request Body_
 ```
 {
   "quantityItem": 2
+}
+```
+
+_Response (201)_
+```
+{
+    "id": 2,
+    "OrderId": 1,
+    "MenuId": 12,
+    "quantityItem": 2,
+    "quantityPrice": 82000,
+    "updatedAt": "2021-07-27T13:13:04.856Z",
+    "createdAt": "2021-07-27T13:13:04.856Z"
+}
+```
+
+### POST /neworder/ordercustomer
+> Post new order
+
+_Request Header_
+```
+{
+  "access_token": "<your access token>"
+}
+```
+_Request Body_
+```
+{
+  "customerName": 2,
+  "AdminId": 1
 }
 ```
 
