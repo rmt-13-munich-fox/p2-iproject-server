@@ -118,6 +118,13 @@ class Controller {
       offset,
     })
       .then((result) => {
+        let nullNews= 0
+        result.rows.forEach((el) => {
+          if(el.News === null){
+            nullNews ++
+          }
+        })
+        result.totalItems = result.totalItems - nullNews
         result.rows = result.rows.filter(el=> el.News !== null)
         const response = getPagingData(result, page, limit);
         res.status(200).json(response);
