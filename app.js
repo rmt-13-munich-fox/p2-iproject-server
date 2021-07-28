@@ -1,12 +1,29 @@
-require("dotenv").config();
-const express = require("express");
-const app = express();
-const routers = require("./routers");
-const port = process.env.PORT || 3000;
+const express = require('express')
+const router = require('./routes')
+const app = express()
+const cors = require("cors")
+const PORT = 3000
+const httpServer = require("http").createServer(app);
+const io = require("socket.io")(httpServer, {
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"]
+    }
+  });
 
-app.use(express.urlencoded({ extended: true }));
-app.use(routers);
+app.use(cors())
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 
-app.listen(port, () => {
-  console.log(`Server started at http://localhost:${port}`);
-});
+app.use("/", router)
+
+io.on('connection', (socket) => {
+    console.log('someone connected');
+    socket.on("sendMessage", (data) => {
+        console.log(data, "ini data");
+    })
+})
+
+httpServer.listen(PORT, () => {
+    console.log(`Applikasi berjalan di http://localhost:${PORT}`);
+})
