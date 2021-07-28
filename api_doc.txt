@@ -1,0 +1,287 @@
+# covidBase Server
+covidBase App is an application to show covid spread and give support to all user. This app has : 
+* RESTful endpoint for asset's CRUD operation
+* JSON formatted response
+
+&nbsp;
+
+## RESTful endpoints
+
+### GET /nations/:name
+
+> Get nation by name
+
+
+_Request Header_
+```
+{
+  "access_token": "<your access token>"
+}
+```
+
+_Request Body_
+```
+not needed
+```
+
+_Request Params_
+```
+  "name":"Indonesia"
+```
+
+_Response (200)_
+```
+[
+    {
+        "country": "Indonesia",
+        "code": "ID",
+        "confirmed": 3287727,
+        "recovered": 2640676,
+        "critical": 0,
+        "deaths": 88659,
+        "latitude": -0.789275,
+        "longitude": 113.921327,
+        "lastChange": "2021-07-28T13:47:13+02:00",
+        "lastUpdate": "2021-07-28T19:45:02+02:00"
+    }
+]
+```
+
+_Response (500 - Internal Server Error)_
+```
+{
+  "message": "Internal Server Error"
+}
+```
+---
+
+
+
+### GET /code/:code
+
+> Get nation by ID unique
+
+_Request Header_
+```
+{
+  "access_token": "<your access token>"
+}
+```
+
+_Request Body_
+```
+not needed
+```
+
+_Request Params_
+```
+  "code":"USA"
+```
+
+_Response (200)_
+```
+[
+    {
+        "country": "USA",
+        "code": "US",
+        "confirmed": 35355430,
+        "recovered": 29571650,
+        "critical": 8795,
+        "deaths": 627379,
+        "latitude": 37.09024,
+        "longitude": -95.712891,
+        "lastChange": "2021-07-28T18:10:25+02:00",
+        "lastUpdate": "2021-07-28T19:45:02+02:00"
+    }
+]
+```
+_Response (500 - Internal Server Error)_
+```
+{
+  "message": "Internal Server Error"
+}
+```
+---
+
+
+
+
+### GET /date
+
+> Get nation by date and name
+
+_Request Header_
+```
+{
+  "access_token": "<your access token>"
+}
+```
+
+_Request Body_
+```
+not needed
+
+```
+
+_Request Params_
+```
+  ?name=indonesia&date=2021-01-01
+```
+
+_Response (200)_
+```
+[
+    {
+        "country": "Indonesia",
+        "provinces": [
+            {
+                "province": "Indonesia"
+            }
+        ],
+        "latitude": -0.789275,
+        "longitude": 113.921327,
+        "date": "2021-01-01"
+    }
+]
+```
+
+
+_Response (500 - Internal Server Error)_
+```
+{
+  "message": "Internal Server Error"
+}
+```
+
+### POST /users/register
+
+> REGISTER user 
+
+_Request Header_
+```
+{
+  Not Needed
+}
+```
+
+_Request Body_
+```
+{
+  "username": "<name to get insert into>",
+  "email": "<email to get insert into>",
+  "password": "<password to get insert into>",
+  "createdAt": "2020-03-20T07:15:12.149Z",
+  "updatedAt": "2020-03-20T07:15:12.149Z",
+}
+```
+
+_Response (201 - Data Created)_
+```
+{
+  "id": <given id by system>,
+  "name": <posted name>,
+  "email": <posted email>,
+  "password": <posted password>,
+  "createdAt": "2020-03-20T07:15:12.149Z",
+  "updatedAt": "2020-03-20T07:15:12.149Z",
+}
+```
+
+_Response (400 - Bad Request)_
+```
+{
+  msg: err.name, detail:errorList"
+}
+```
+---
+### POST /login
+
+> LOGIN user 
+
+_Request Header_
+```
+{
+  Not Needed
+}
+```
+
+_Request Body_
+```
+{
+  "email": "<email to get insert into>",
+  "password": "<password to get insert into>",
+}
+```
+
+_Response (200 - Success)_
+```
+{
+    "msg": "yadiman",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDk2NDgzfQ.Ta9qbhFeZWO5AQJnH8tX3qSYSoIsiXKFjlqqmbVhN9o"
+}
+```
+
+_Response (404 - Not Found)_
+```
+{
+  "msg":'User does not exist'
+}
+```
+
+_Response (400 - Bad Request)_
+```
+{
+  "msg":"email is required"
+}
+```
+_Response (400 - Bad Request)_
+```
+{
+  "msg":"password is required"
+}
+```
+_Response (404 - Not found)_
+```
+{
+  "msg":"Email / Password is wrong"
+}
+```
+_Response (500 - Internal Server Error)_
+```
+{
+  "msg:"Internal Server Error"
+}
+```
+---
+
+### POST /login/facebook
+
+> LOGIN user 
+
+_Request Header_
+```
+{
+  Not Needed
+}
+
+_Request Body_
+```
+{
+  "username": "<username facebook to get insert into>"
+  "email": "<email facebook to get insert into>",
+  "password": "<password to get insert into>",
+}
+```
+
+_Response (200 - Success)_
+```
+{
+    {msg: user.username, token}
+}
+```
+
+_Response (500 - Internal Server Error)_
+```
+{
+  "msg:"Internal Server Error"
+}
