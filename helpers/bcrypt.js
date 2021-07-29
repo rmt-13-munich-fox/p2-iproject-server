@@ -6,7 +6,7 @@ const hashPassword = (password) => {
   return hash;
 };
 
-const syncPassword = (hash, password) => {
+const syncPassword = (password, hash) => {
   return bcrypt.compareSync(password, hash);
 };
 
