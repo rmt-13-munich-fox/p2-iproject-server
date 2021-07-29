@@ -1,63 +1,138 @@
-## Ayah Marmut
+# Ayahmarmut server
+
 
 ### Description
 
-This is a simple web app devoted for all guinea pig lovers.
+This is a simple web app devoted to all guinea pig lovers.
 
-### Dependency NPM Package
 
-- `express`               for handling your routes
-- `axios`			      for connecting client, server, and 3rd party apis
-- `sequelize`             ORM for storing users in the database
-- `pg`                    Non-blocking PostgreSQL client for Node.js
-- `bcrypt`                for encrypting your passwords before you store them in your database. It’s a necessity to never store passwords in plain text for obvious security reasons.
-- `cors`                 for giving connections to
-- `form-data`			 to make adding image through multer and imagekit possible.
-- `multer`				  tools for uploading pictre.
-- `nodemailer`			  api for automatically sending email.
-- `socket.io`			  for making chatbox
-- `jsonwebtoken`          An implementation of JSON Web Tokens.
 
-Routes:
+### GET /getmarmut
 
+> Get all list of registered guinea pigs.
+
+_Request Header_
 ```
-GET    /getmarmut                        """Fetch database"""
-POST   /register     				     """Register POST handle"""
-POST   /login                            """Login POST handle"""
-POST   /addmarmut                        """Logout handle"""
+  not needed
 ```
 
-### Instalation
-
-**1. Clone the source code**
-
+_Request Body_
 ```
-$ git clone https://github.com/garryfishy/p2-iproject-server.git
+  not needed
 ```
 
-**2. Install Dependencies**
-
-Make sure you have [Node.js](https://nodejs.org/) and [NPM](https://www.npmjs.com/) installed. Project dependencies listed in `package.json`.
-
+_Response (200)_
 ```
-$ npm install
+[
+  {
+    "id": 1,
+    "name": "Chess",
+    "gender": "Sow (Female)",
+    "imgURL": "https://ik.imagekit.io/waknkqe0dx5v/Screen_Shot_2021-07-27_at_5.43.21_PM_uplylFecN-.png?updatedAt=1627382645187",
+    "age": 2,
+    "submittedBy": "Garry",
+    "description": "Chess was our first guinea pig! She is a very naughty guinea pig but she is very cute, she likes eating grass so much.",
+    "createdAt": "2021-07-28T19:50:28.698Z",
+    "updatedAt": "2021-07-28T19:50:28.698Z"
+  },
+  {
+    "id": 2,
+    "name": "Key",
+    "gender": "Sow (Female)",
+    "imgURL": "https://ik.imagekit.io/waknkqe0dx5v/Screen_Shot_2021-07-27_at_5.43.01_PM_6ifHDKIBL.png?updatedAt=1627382644876",
+    "age": 2,
+    "submittedBy": "Garry",
+    "description": "Key was the second guinea pig that we adopted, she is more of a stronger woman compared to chess, she really hates to be touched, but we love her nonetheless!",
+    "createdAt": "2021-07-28T19:50:28.698Z",
+    "updatedAt": "2021-07-28T19:50:28.698Z"
+  }
+]
+```
+_Response (500 - Internal server error)_
+```
+  Internal server error
+```
+### POST /register
+> Register an account.
+
+_Request Header_
+```
+  not needed
 ```
 
-**3. Run the server**
-
-Run server with:
-
+_Request Body_
 ```
-$ nodemon app.js
+  username: strings,
+  email: strings,
+  password: strings
+```
 
-&nbsp;
+_response(201)_
+```
+{
+  "email": "marmut@Mail.com",
+  "username": "tanakaa"
+}
+```
+_response(500)_
+```
+"Internal Server Error"
+```
 
-Server listening in port 3000 (open http://localhost:3000)
-Make sure you use API testing tool like Postman or Insomnia.
-That's all. Thank you.
+### POST /login
+> Login to existing account.
 
-&nbsp;
+_Request Header_
+```
+  not needed
+```
 
-Sincerely,
+_Request Body_
+```
+  email: strings,
+  password: strings
+```
 
-Garry Agassi
+_response(201)_
+```
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2Mjc1OTg5MjUsImV4cCI6MTYyNzYwMjUyNX0.gjmzSjfTcOgjKq-pu2VUKgEWTdTbTImQeD7OFxf0K_4",
+  "username": "admin"
+}
+```
+
+_response(401)_
+```
+{
+  "message": "Invalid info"
+}
+```
+
+### POST /addmarmut
+
+_Request Header_
+```
+  not needed
+```
+
+_Request Body_
+```
+  name: strings,
+  gender: strings,
+  imgURL: file,
+  age: integer,
+  submittedBy: strings,
+  description: strings
+```
+_response(201)_
+```
+[
+	{
+		Little Timmy has been added to the community! Welcome!
+	}
+]
+```
+_response(500)_
+```
+"Internal Server Error"
+```
