@@ -4,8 +4,10 @@ const { User, Chat } = require("../models/index")
 class Controller {
     static login (req, res) {
         const newUser = {
-            username: req.body.username
+            username: req.body.username,
+            Room: req.body.room
         }
+        console.log(newUser);
         User.create(newUser)
         .then((data) => {
             let token = createToken({id: data.id, username: data.username})
@@ -83,14 +85,22 @@ class Controller {
     }
 
     static getUserLog (req, res) {
-        User.findAll()
+        console.log(req.query, "XXXXX");
+        const Room = req.query.room
+        console.log(Room);
+        User.findAll({
+            where: {
+                Room
+            }
+        })
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             res.status(200).json(data)
         })
-        .catch((err) => [
+        .catch((err) => {
+            console.log(err);
             res.status(500).json(err)
-        ])
+        })
     }
 }
 
