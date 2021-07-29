@@ -3,7 +3,9 @@ const Controller = require('../controllers/newsController')
 const {authentification} = require('../middlewares/auth')
 const job = require('../helpers/cronJob')
 
-job.start()
+// TODO Optimize time for cron job
+job.start() 
+
 router.get('/latest-news',Controller.getLatestNews)
 router.get('/latest-news/all',Controller.getAllLatestNews)
 router.post('/keywords',Controller.searchKeywords)

@@ -510,6 +510,39 @@ _Response (500 - Internal server error)_
 }
 ```
 
+### POST /loginGoogle
+> return a access_token
+
+_Request Header_
+```
+{
+  not needed
+}
+```
+
+_Request Body_
+```
+{
+  "id_token": "<id_token provided by google>"
+}
+```
+
+_Response (200 - Ok)_
+```
+{
+  "access_token" : "your access token"
+}
+```
+
+_Response (500 - Internal server error)_
+```
+{
+  "message": "Internal server error"
+}
+```
+
+
+
 
 ### POST /register/
 > register new user
