@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 io.on("connection", (socket) => {
   console.log("userconnected");
   socket.on("sendMessage", (data) => {
-    console.log(data, "KIWKIWKIW");
+    console.log(data);
     io.emit("broadcastMsg", data);
   });
 });
