@@ -19,19 +19,24 @@ app.use("/", router)
 
 io.on('connection', (socket) => {
     // console.log('someone connected');
-    socket.on('newUser', (data => {
-      // console.log(data);
-      socket.broadcast.emit("newLogin", data)
+    socket.on('newUser', (data, room) => {
+      console.log(data);
+      socket.to(room).emit("newLogin", data)
       io.emit("updateUser")
-    })) 
-    socket.on("sendMessage", (data) => {
+    }) 
+    socket.on("sendMessage", (data, room) => {
         // console.log(data, "ini data");
         // io.emit("broadcastMessage", data)
-        socket.broadcast.emit("broadcastMessage", data)
+        socket.to(room).emit("broadcastMessage", data)
     })
-    socket.on("leaveUser", (data) => {
-      socket.broadcast.emit("logoutUser", data)
+    socket.on("leaveUser", (data, room) => {
+      socket.to(room).emit("logoutUser", data)
       io.emit("updateUser")
+    })
+
+    socket.on("joinRoom", (room) => {
+      // console.log(`User has joined ${room}`);
+      socket.join(room)
     })
 })
 

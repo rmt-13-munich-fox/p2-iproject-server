@@ -28,7 +28,22 @@ module.exports = (sequelize, DataTypes) => {
           msg: "Please insert your username correctly"
         }
       }
-    }
+    },
+    Room: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,  
+      validate: {
+        notNull: {
+          args: true,
+          msg: "Please insert your room correctly"
+        },
+        notEmpty: {
+          args: true, 
+          msg: "Please insert your room correctly"
+        }
+      }
+    },
   }, {
     sequelize,
     modelName: 'User',
