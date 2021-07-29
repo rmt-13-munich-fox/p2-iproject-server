@@ -1,0 +1,6 @@
+SECRET_KEY= // currentnewsapi
+CURRENTS_API_TOKEN = //currentnewsapi
+HOST = // email host
+USER = // email id
+PASS = // email password
+SERVICE = // email service
