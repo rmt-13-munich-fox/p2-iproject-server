@@ -38,12 +38,16 @@ class UserController {
                 res.status(201).json(admin)
             } else {
                 next({
-                    name: "internalServerError"
+                    name: "errSequelizeOrNo",
+                    errName: error.name,
+                    data: error.errors
                 })
             }
         } catch (error) {
             next({
-                name: "internalServerError"
+                name: "errSequelizeOrNo",
+                errName: error.name,
+                data: error.errors
             })
         }
     }
@@ -78,13 +82,17 @@ class UserController {
                 res.status(201).json(client)
             } else {
                 next({
-                    name: "internalServerError"
+                    name: "errSequelizeOrNo",
+                    errName: error.name,
+                    data: error.errors
                 })
             }
 
         } catch (error) {
             next({
-                name: "internalServerError"
+                name: "errSequelizeOrNo",
+                errName: error.name,
+                data: error.errors
             })
         }
     }
@@ -107,7 +115,10 @@ class UserController {
                 if (isPassword) {
                     const access_token = jwtSign(loggedUser.id, loggedUser.email, loggedUser.role, loggedUser.username)
                     res.status(200).json({
-                        access_token
+                        access_token,
+                        id : loggedUser.id,
+                        email : loggedUser.email,
+                        role : loggedUser.role
                     })
                 } else {
                     next({

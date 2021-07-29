@@ -13,5 +13,4 @@ router.get('/', BookmarkController.fetchBookmarks)
 router.post('/', BookmarkController.addBookmark)
 router.delete('/:id', removeBookmarkAuthorization, BookmarkController.deleteBookmark)
 
-
 module.exports = router

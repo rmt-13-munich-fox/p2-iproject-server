@@ -5,6 +5,7 @@ const bodyFormData = new FormData();
 
 const uploadImageKit = async (req, res, next) => {
     try {
+        console.log('masuk ke imagekit');
         const {
             size,
             mimetype,
@@ -23,6 +24,7 @@ const uploadImageKit = async (req, res, next) => {
                 name: 'sizeTooBig'
             })
         } else {
+            console.log('masuk ke axios imagekit part 1');
             bodyFormData.append('fileName', originalname);
             bodyFormData.append('file', buffer.toString('base64'));
 
@@ -34,6 +36,7 @@ const uploadImageKit = async (req, res, next) => {
                 },
                 data: bodyFormData
             })
+            console.log('masuk ke axios imagekit');
             req.body.thumbnail = imageKit.data.url
             next()
         }

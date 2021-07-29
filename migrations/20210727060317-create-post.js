@@ -10,31 +10,19 @@ module.exports = {
       },
       title: {
         type: Sequelize.STRING,
-        allowNull: {
-          args: false,
-          msg: "title can't be empty"
-        }
+        allowNull: false
       },
       description: {
         type: Sequelize.TEXT,
-        allowNull: {
-          args: false,
-          msg: "description can't be empty"
-        }
+        allowNull: false
       },
       thumbnail: {
         type: Sequelize.STRING,
-        allowNull: {
-          args: false,
-          msg: "thumbnail can't be empty"
-        }
+        allowNull: false
       },
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: {
-          args: false,
-          msg: "userId can't be empty"
-        },
+        allowNull: false,
         references: {
           model: "Users",
           key: "id"
@@ -44,10 +32,7 @@ module.exports = {
       },
       tagId: {
         type: Sequelize.INTEGER,
-        allowNull: {
-          args: false,
-          msg: "tagId can't be empty"
-        },
+        allowNull: false,
         references: {
           model: "Tags",
           key: "id"

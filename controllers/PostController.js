@@ -4,7 +4,8 @@ const {
 } = require('../helpers/pagination')
 const {
     Post,
-    Tag
+    Tag,
+    User
 } = require('../models/index')
 class PostController {
     static async createBlogPost(req, res, next) {
@@ -37,7 +38,9 @@ class PostController {
 
         } catch (error) {
             next({
-                name: "internalServerError"
+                name: "errSequelizeOrNo",
+                errName: error.name,
+                data: error.errors
             })
         }
     }
@@ -77,7 +80,9 @@ class PostController {
 
         } catch (error) {
             next({
-                name: "internalServerError"
+                name: "errSequelizeOrNo",
+                errName: error.name,
+                data: error.errors
             })
         }
     }
@@ -95,7 +100,9 @@ class PostController {
             })
         } catch (error) {
             next({
-                name: "internalServerError"
+                name: "errSequelizeOrNo",
+                errName: error.name,
+                data: error.errors
             })
         }
     }
@@ -106,6 +113,8 @@ class PostController {
             const post = await Post.findByPk(id, {
                 include: [{
                     model: Tag
+                },{
+                    model: User
                 }]
             })
             if (post) {
@@ -146,6 +155,9 @@ class PostController {
                 include: [{
                     model: Tag
                 }],
+                order:[[
+                    "updatedAt","DESC"
+                ]],
                 limit,
                 offset
             })

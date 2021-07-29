@@ -2,6 +2,9 @@
 const {
   Model
 } = require('sequelize');
+const {
+  Sequelize
+} = require('.');
 module.exports = (sequelize, DataTypes) => {
   class Bookmark extends Model {
     /**
@@ -18,6 +21,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Bookmark.init({
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     userId: {
       type: DataTypes.INTEGER,
       references: {

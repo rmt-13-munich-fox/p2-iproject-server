@@ -9,6 +9,6 @@ router.use('/', users)
 router.use('/posts', posts)
 router.use('/bookmarks', bookmark)
 router.get('/tags', TagController.fetchAllTag)
-router.user(errorHandler)
+router.use(errorHandler)
 
 module.exports = router

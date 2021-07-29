@@ -40,7 +40,6 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       unique: {
-        args: true,
         msg: 'email is already exist'
       },
       allowNull: {

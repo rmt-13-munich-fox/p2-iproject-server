@@ -10,42 +10,24 @@ module.exports = {
       },
       username: {
         type: Sequelize.STRING,
-        allowNull: {
-          args: false,
-          msg: "username test can't be empty"
-        }
+        allowNull: false
       },
       email: {
         type: Sequelize.STRING,
-        unique: {
-          args: true,
-          msg: 'email is already exist'
-        },
-        allowNull: {
-          args: false,
-          msg: "email can't be empty"
-        }
+        unique: true,
+        allowNull: false
       },
       password: {
         type: Sequelize.STRING,
-        allowNull: {
-          args: false,
-          msg: "password can't be empty"
-        }
+        allowNull: false
       },
       avatarImg: {
         type: Sequelize.STRING,
-        allowNull: {
-          args: false,
-          msg: "avatarImg can't be empty"
-        }
+        allowNull: false
       },
       role: {
         type: Sequelize.STRING,
-        allowNull: {
-          args: false,
-          msg: "role can't be empty"
-        }
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

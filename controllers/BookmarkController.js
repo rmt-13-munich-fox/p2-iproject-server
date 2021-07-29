@@ -7,6 +7,7 @@ const {
 class BookmarkController {
     static async addBookmark(req, res, next) {
         try {
+            console.log('masuk ke controller');
             const {
                 id
             } = req.user
@@ -18,6 +19,7 @@ class BookmarkController {
                 postId: +postId
             }
 
+            console.log(createdBookmark);
             const bookmarks = await Bookmark.create(createdBookmark)
             if (bookmarks) {
                 res.status(200).json({
@@ -25,13 +27,14 @@ class BookmarkController {
                 })
             } else {
                 next({
-                    name: "internalServerError"
+                    name: "internalServerError",
                 })
             }
         } catch (error) {
-            next({
-                name: "internalServerError"
-            })
+            console.log(error);
+            // next({
+            //     name: "internalServerError",
+            // })
         }
     }
 
@@ -50,11 +53,15 @@ class BookmarkController {
                     message: 'Bookmark is deleted'
                 })
             } else {
-                console.log('error');
+                next({
+                    name: "internalServerError"
+                })
             }
 
         } catch (error) {
-            console.log(error);
+            next({
+                name: "internalServerError"
+            })
         }
     }
 

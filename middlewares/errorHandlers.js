@@ -43,7 +43,7 @@ const errorHandler = (err, req, res, next) => {
             break;
 
         case 'errSequelizeOrNo':
-            if (err.errName === 'SequelizeValidationError') {
+            if (err.errName) {
                 const errorsMessages = err.data.map(error => {
                     return error.message
                 })

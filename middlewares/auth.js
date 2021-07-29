@@ -92,10 +92,28 @@ const clientAuthorization = (req, res, next) => {
 const removeBookmarkAuthorization = async (req, res, next) => {
     const id = Number(req.params.id)
     try {
-        const bookmark = await Bookmark.findAll()
-        console.log(bookmark[0].userId);
+        const {
+            id: userId
+        } = req.user
+        const bookmark = await Bookmark.findByPk(id)
+        if (bookmark) {
+            if (bookmark.userId === userId) {
+                next()
+            } else {
+                next({
+                    name: "notAuthorized"
+                })
+            }
+        } else {
+            next({
+                name: "notFound",
+                message: "bookmark"
+            })
+        }
     } catch (error) {
-        console.log(error);
+        next({
+            name: "internalServerError"
+        })
     }
 }
 

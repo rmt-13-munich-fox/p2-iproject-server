@@ -16,10 +16,7 @@ module.exports = {
         },
         onDelete: 'cascade',
         onUpdate: 'cascade',
-        allowNull: {
-          args: false,
-          msg: "userId can't be empty"
-        }
+        allowNull: false
       },
       postId: {
         type: Sequelize.INTEGER,
@@ -29,10 +26,7 @@ module.exports = {
         },
         onDelete: 'cascade',
         onUpdate: 'cascade',
-        allowNull: {
-          args: false,
-          msg: "postId can't be empty"
-        }
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

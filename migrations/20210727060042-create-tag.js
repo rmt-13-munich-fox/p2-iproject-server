@@ -10,10 +10,7 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: {
-          args: false,
-          msg: "name can't be empty"
-        }
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
