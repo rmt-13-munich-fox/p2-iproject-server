@@ -13,12 +13,12 @@ This app has :
 
 _Request Header_
 ```
-    not needed
+  not needed
 ```
 
 _Request Body_
 ```
-    not needed
+  not needed
 ```
 
 _Response (200)_
@@ -78,30 +78,30 @@ _Response (200)_
 [
    "totalItems": 548,
     "rows": [
-        {
+      {
+        "id": 332,
+        "news_id": "2f9dc6f1-8ab7-4c2f-bc0c-062432b46c9e",
+        "title": "RPSC SI exam 2021 date announced at rpsc.rajasthan.gov.in, check here - Times of India",
+        "author": "Heeba Hameed",
+        "description": "Education News: NEW DELHI: Rajasthan Public Service Commission on Wednesday announced the exam date of Sub Inspector 2021 on its official website.",
+        "url": "https://timesofindia.indiatimes.com/home/education/news/rpsc-si-exam-2021-date-announced-at-rpsc-rajasthan-gov-in-check-here/articleshow/84825083.cms",
+        "image_url": "https://static.toiimg.com/thumb/msid-84825247,width-1070,height-580,imgsize-15166,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+        "category": "education",
+        "published": "2021-07-28T15:54:10.000Z",
+        "Sentiment": {
             "id": 332,
-            "news_id": "2f9dc6f1-8ab7-4c2f-bc0c-062432b46c9e",
-            "title": "RPSC SI exam 2021 date announced at rpsc.rajasthan.gov.in, check here - Times of India",
-            "author": "Heeba Hameed",
-            "description": "Education News: NEW DELHI: Rajasthan Public Service Commission on Wednesday announced the exam date of Sub Inspector 2021 on its official website.",
-            "url": "https://timesofindia.indiatimes.com/home/education/news/rpsc-si-exam-2021-date-announced-at-rpsc-rajasthan-gov-in-check-here/articleshow/84825083.cms",
-            "image_url": "https://static.toiimg.com/thumb/msid-84825247,width-1070,height-580,imgsize-15166,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
-            "category": "education",
-            "published": "2021-07-28T15:54:10.000Z",
-            "Sentiment": {
-                "id": 332,
-                "NewsId": 332,
-                "sentiment": "neutral",
-                "tokens": "education,news,new,delhi,rajasthan,public,service,commission,on,wednesday,announced,the,exam,date,of,sub,inspector,2021,on,its,official,website",
-                "positive_words": "",
-                "negative_words": "",
-                "stop_words": "on,the,date,of,on,its",
-                "comperative": 0,
-                "score": 0,
-                "calculation": "[]"
-            }
+            "NewsId": 332,
+            "sentiment": "neutral",
+            "tokens": "education,news,new,delhi,rajasthan,public,service,commission,on,wednesday,announced,the,exam,date,of,sub,inspector,2021,on,its,official,website",
+            "positive_words": "",
+            "negative_words": "",
+            "stop_words": "on,the,date,of,on,its",
+            "comperative": 0,
+            "score": 0,
+            "calculation": "[]"
+          }
         },
-            ...
+          ...
     ],
     "totalPages": 69,
     "currentPage": 0
@@ -314,7 +314,13 @@ _Response (400 - Bad Request)_
   "message": "validation required"
 }
 ```
-
+```
+{
+  "message": [
+    "NewsId must be unique"
+  ]
+}
+```
 _Response (404 - Bad Request)_
 ```
 {
@@ -403,12 +409,7 @@ _Response (400 - Bad Request)_
 }
 ```
 
-_Response (404 - Bad Request)_
-```
-{
-  "message": "email not found"
-}
-```
+
 _Response (500 - Internal server error)_
 ```
 {
@@ -494,15 +495,21 @@ _Response (400 - Bad Request)_
   "message": "email is required"
 }
 ```
-
+_Response (401 - Bad Request)_
 ```
+{
+  "message": "email/password is incorrect"
+}
+```
+
+
 _Response (500 - Internal server error)_
 ```
 {
   "message": "Internal server error"
 }
 ```
-```
+
 
 ### POST /register/
 > register new user
@@ -536,7 +543,7 @@ _Response (400 - Bad Request)_
 }
 ```
 
-```
+
 _Response (500 - Internal server error)_
 ```
 {

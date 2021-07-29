@@ -136,7 +136,7 @@ class Controller {
   static deleteBookmark = (req, res, next) => {
     const id = req.params.id;
     Bookmark.destroy({
-      where: { id },
+      where: { NewsId:id },
     })
       .then((result) => {
         if (result) res.status(200).json(`Bookmark with id ${id} has been deleted`);
