@@ -15,7 +15,21 @@ class UserController {
         res.status(201).json({ id: user.id, username: user.username, email: user.email })
       })
       .catch(err => {
-        res.status(500).json({ message: err.message })
+        if (err.name === 'SequelizeUniqueConstraintError') {
+          let error = [ err.errors[0].message ]
+
+          res.status(400).json(error)
+        } else if(err.name === 'SequelizeValidationError') {
+          let errors = []
+
+          err.errors.forEach(error => {
+            errors.push(error.message)
+          })
+
+          res.status(400).json(errors)
+        } else {
+          res.status(500).json({ message: err.message })
+        }
       })
   }
   static login (req, res) {
@@ -35,10 +49,10 @@ class UserController {
             })
             res.status(200).json({ access_token })
           } else {
-
+            res.status(401).json({ message: 'Invalid email/password' })
           }
         } else {
-
+          res.status(401).json({ message: 'Invalid email/password' })
         }
       })
       .catch(err => {
