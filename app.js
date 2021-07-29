@@ -13,7 +13,7 @@ const errorHandling = require('./middleware/error')
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: 'https://hack-car.web.app/',
+    origin: 'https://hack-car.web.app',
     methods: ['GET', 'POST']
   }
 })
