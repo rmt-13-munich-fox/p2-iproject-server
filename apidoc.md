@@ -1,5 +1,7 @@
 Api doc
 
+heroku base = https://car-community.herokuapp.com
+
 Info Table {
     User: berisi table pengguna yang sudah mendaftarkan diri,
     Car: berisi table dari fetch 3rd api dengan link url https://parseapi.back4app.com/classes/ menggunakan scraping dengan mengambil data dari internet tapi dan langsung memasukkan beserta dengan fetch data nya,
