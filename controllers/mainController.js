@@ -3,8 +3,8 @@ const { User } = require("../models");
 const jwt = require("jsonwebtoken");
 const { google } = require("googleapis");
 const { OAuth2Client } = require("google-auth-library");
-const calendar = google.calendar("v3");
 const { admin } = require("../helpers/firebaseconfig.js");
+let firstEvent = ``;
 
 class MainController {
 	static async getWeather(req, res, next) {
@@ -18,11 +18,12 @@ class MainController {
 			weatherData.data.hourly.forEach((time) => {
 				time.dt = new Date(time.dt * 1000).getHours();
 			});
-			console.log(weatherData.data.daily.length);
+			weatherData.data.daily.forEach((day) => {
+				day.dt = new Date(day.dt * 1000).toISOString().substring(0, 10);
+			});
 			res.status(200).json(weatherData.data);
 		} catch (err) {
 			res.status(400).json(err);
-			console.log(err.toJSON);
 		}
 	}
 
@@ -35,7 +36,6 @@ class MainController {
 				audience: process.env.GOOGLE_CLIENT_ID,
 			});
 			let payload = ticket.getPayload();
-			console.log(payload);
 			let userData = await User.findOne({
 				where: {
 					email: payload.email,
@@ -100,10 +100,19 @@ class MainController {
 				access_token,
 				id_token,
 			});
-			const upcomingEvents = await calendar.calendarList.list({
+			const calendar = google.calendar({
+				version: "v3",
 				auth: oauth2client,
 			});
-			res.status(200).json(upcomingEvents.data);
+			let calendarList = await calendar.events.list({
+				calendarId: "primary",
+				timeMin: new Date().toISOString(),
+				maxResults: 10,
+				singleEvents: true,
+				orderBy: "startTime",
+			});
+			firstEvent = calendarList.data.items[0].summary;
+			res.status(200).json(calendarList.data.items);
 		} catch (err) {
 			console.log(err);
 		}
@@ -118,10 +127,11 @@ class MainController {
 		const options = notification_options;
 		let message = {
 			notification: {
-				title: "test",
-				body: "bisa masuk",
+				title: `Nearest appointment/event`,
+				body: `${firstEvent}`,
 			},
 		};
+		console.log(message);
 		admin
 			.messaging()
 			.sendToDevice(registrationToken, message, options)
