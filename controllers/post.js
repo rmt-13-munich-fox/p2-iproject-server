@@ -40,6 +40,7 @@ class PostController {
 
     static async createPost(req, res, next) {
         try {
+            
             const post = await Post.create({
                 userId: req.user.id,
                 imgUrl: req.body.imgUrl,

@@ -16,14 +16,14 @@ function authentication(req, res, next) {
         }
         catch (err) {
             next({
-                name: 'Authentication Error',
+                name: 'AuthenticationError',
                 message: 'You must login first'
             })
         }
     }
     else {
         next({
-            name: 'Authentication Error',
+            name: 'AuthenticationError',
             message: 'You must login first'
         })        
     }

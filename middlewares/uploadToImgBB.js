@@ -22,9 +22,9 @@ async function uploadToImgBB(req, res, next) {
             },
             data: form
         })
-        // console.log(data);
+
         req.body.imgUrl = data.data.url
-        // console.log(data.data);
+        
         next()
 
     } catch (err) {

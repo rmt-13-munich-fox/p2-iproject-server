@@ -29,19 +29,22 @@ class UserController {
                 }
                 else {
                     next({
-                        name: 'Error authentication',
-                        message: 'Invalid password'
+                        name: 'AuthenticationError',
+                        message: 'Invalid email / password'
                     })
                 }
             }
             else {
                 next({
-                    name: 'Error authentication',
-                    message: 'Invalid email address'
+                    name: 'AuthenticationError',
+                    message: 'Invalid email / password'
                 })
             }
         } catch (err) {
-            next(err)
+            next({
+                name: 'ServerError',
+                message: err.message || 'Internal server error'
+            })
         }
     }
 
@@ -58,7 +61,10 @@ class UserController {
             })
         }
         catch (err) {
-            next(err)
+            next({
+                name: 'ServerError',
+                message: err.message || 'Internal server error'
+            })
         }
     }
 }
