@@ -27,13 +27,11 @@ class UserController {
     User.findOne({ where: { email } })
       .then((data) => {
         if (data) {
-          console.log(data.password);
-          console.log(password);
           const correctPswd = syncPassword(password, data.password);
-          console.log(correctPswd);
           if (correctPswd) {
             const token = generateToken(data);
-            res.status(200).json({ token, email: data.email, role: data.role });
+            console.log(token);
+            res.status(200).json({ token, email: data.email, name: data.name });
           } else {
             next({
               name: "InvalidLogin",
