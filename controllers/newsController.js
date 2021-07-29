@@ -18,7 +18,7 @@ class Controller {
     if(!sentiment || sentiment == "all") delete querySentiment.sentiment
     const { limit, offset } = getPagination(page, size);
     News.findAndCountAll({
-      order: [["published", "desc"]],
+      order: [["createdAt", "desc"]],
       attributes: {
         exclude: ["createdAt", "updatedAt"],
       },
