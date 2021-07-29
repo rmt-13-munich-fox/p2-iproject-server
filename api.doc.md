@@ -8,7 +8,6 @@ This is a simple web app devoted for all guinea pig lovers.
 
 - `express`               for handling your routes
 - `axios`			      for connecting client, server, and 3rd party apis
-- `passport-jwt`          to handle user authenticating with JWT strategy
 - `sequelize`             ORM for storing users in the database
 - `pg`                    Non-blocking PostgreSQL client for Node.js
 - `bcrypt`                for encrypting your passwords before you store them in your database. It’s a necessity to never store passwords in plain text for obvious security reasons.
