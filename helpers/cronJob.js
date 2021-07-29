@@ -9,7 +9,7 @@ const { News, Sentiment } = require("../models");
 // Months: 0-11 (Jan-Dec)
 // Day of Week: 0-6 (Sun-Sat)
 const job = new CronJob(
-  "*/8 * * * *",
+  "*/4 * * * *",
   function () {
     let news;
     getLatestNews()
