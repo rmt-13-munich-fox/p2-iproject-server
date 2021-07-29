@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
 		console.log('Disconnected')
 	})
 	socket.on('sendMessage', (data) => {
-		console.log(data , 'ini data di server')
+		// console.log(data , 'ini data di server')
 		io.emit('broadcastMessage', data)
 	})
 

@@ -80,6 +80,7 @@ class Controller {
 	}
 
 	static async postMarmut(req, res, next) {
+		// console.log(req)
         try {
             let {
                 name,
@@ -92,14 +93,16 @@ class Controller {
             const buffer = req.file.buffer.toString('base64')
             let imgURL = await image(imageName, buffer)
             imgURL = imgURL.url
+			// console.log(name,age,gender,age,submittedBy,description)
             const addMarmut = await Marmut.create({
-                name,
+				name,
                 gender,
                 imgURL,
 				age,
                 submittedBy,
 				description
             })
+			// console.log(addMarmut.name)
             if (addMarmut) {
                 res.status(201).json(`Little ${addMarmut.name} has been added to the community! Welcome!`)
             } else {
@@ -110,6 +113,7 @@ class Controller {
                 }
             }
         } catch (err) {
+			// console.log(err.message)
             if (err.code) {
                 next({
                     name: err.name,
@@ -121,9 +125,8 @@ class Controller {
                     message: err.message
                 })
             } else {
+				console.log('err.message')
                 next({
-                    name: "InternalErrorServer",
-                    message: "Internal Server Error"
                 })
             }
         }
