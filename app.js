@@ -10,10 +10,10 @@ const {User} = require('./models')
 // const server = http.createServer(app);
 let io = require('socket.io')(http, {
     cors: {
-        origin: "http://ayahmarmut.web.app",
+        origin: "https://ayahmarmut.web.app",
         methods: ["GET", "POST"]
     }
-})
+}) 
 
 
 app.use(cors())
