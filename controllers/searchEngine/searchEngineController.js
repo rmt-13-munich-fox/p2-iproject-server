@@ -1,24 +1,25 @@
-// const { searchEngineAPI } = require("../../helpers/apis");
-// const axios = require("axios");
-const axios = require("../../helpers/apis");
+const axios = require("axios");
 
 class SearchEngineController {
   static async searchByQuery(req, res, next) {
-    console.log(req.query.keyword);
-    console.log(
-      `?access_key=a87097c2d729d8f5a0dda985727cb734&query=${req.query.keyword}`
-    );
+    const params = {
+      api_key: process.env.API_KEY,
+      q: req.query.keyword,
+    };
     try {
-      // const response = await axios.get(
-      //   `http://api.serpstack.com/search?access_key=a87097c2d729d8f5a0dda985727cb734&query=${req.query.keyword}`
-      // );
-      const response = await axios({
-        url: `query=${req.query.keyword}`,
-        method: "GET",
+      const response = await axios.get("https://api.scaleserp.com/search", {
+        params,
       });
-      console.log(response.data);
+      res.status(200).json({
+        search_information: response.data.search_information,
+        pagination: response.data.pagination.api_pagination,
+        organic_results: response.data.organic_results,
+      });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      res.status(501).json({
+        msg: "Internal server error",
+      });
     }
   }
 }
