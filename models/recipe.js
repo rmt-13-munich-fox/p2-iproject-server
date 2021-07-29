@@ -11,10 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Recipe.belongsToMany(models.User,{as : "Favorites", through : models.Favorite})
     }
   };
   Recipe.init({
-    name: DataTypes.STRING,
+    name: {
+      type : DataTypes.STRING,
+      allowNull:false,
+      validate : {
+        notNull:{
+          args:true,
+          msg:"name cannot be null"
+        },
+        notEmpty : true
+      },
+    },
     description: DataTypes.STRING,
     image: DataTypes.STRING,
     ingredients: DataTypes.TEXT,
