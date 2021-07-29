@@ -1,6 +1,36 @@
+const { User } = require('../models');
+const { verifyJWT } = require('../helpers/jwt');
+
 function authentication(req, res, next) {
-    console.log('masuk authentication =======');
-    next()
+    let { access_token } = req.headers
+    if (access_token) {
+        try {
+            let decoded = verifyJWT(access_token)
+
+            req.user = {
+                email: decoded.email,
+                id: decoded.id
+            }
+
+            next()
+        }
+        catch (err) {
+            next({
+                name: 'Authentication Error',
+                message: 'You must login first'
+            })
+        }
+    }
+    else {
+        next({
+            name: 'Authentication Error',
+            message: 'You must login first'
+        })        
+    }
+}
+
+function authorization(req, res, next) {    
+    
 }
 
 module.exports = {
