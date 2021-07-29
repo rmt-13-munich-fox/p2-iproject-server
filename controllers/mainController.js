@@ -23,7 +23,7 @@ class MainController {
 			});
 			res.status(200).json(weatherData.data);
 		} catch (err) {
-			res.status(400).json(err);
+			next({ code: `400` });
 		}
 	}
 
@@ -114,7 +114,7 @@ class MainController {
 			firstEvent = calendarList.data.items[0].summary;
 			res.status(200).json(calendarList.data.items);
 		} catch (err) {
-			console.log(err);
+			next({ code: `400` });
 		}
 	}
 
@@ -131,7 +131,6 @@ class MainController {
 				body: `${firstEvent}`,
 			},
 		};
-		console.log(message);
 		admin
 			.messaging()
 			.sendToDevice(registrationToken, message, options)
@@ -139,7 +138,7 @@ class MainController {
 				res.status(200).send("Notification sent successfully");
 			})
 			.catch((err) => {
-				console.log(err);
+				next({ code: `400` });
 			});
 	}
 }

@@ -14,7 +14,7 @@ const authentication = (req, res, next) => {
 		req.user = { email: verification.email };
 		next();
 	} catch (err) {
-		next(err);
+		next({ code: `401`, msg: "Unauthorized to retrieve data" });
 	}
 };
 
