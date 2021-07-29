@@ -1,0 +1,228 @@
+BC - Destinations
+
+POST /register
+Request:
+
+data:
+{
+  "email": "string",
+  "name": "string",
+  "password": "string"
+}
+Response:
+
+status: 201
+body:​
+{
+  "id": "integer",
+  "email": "string"
+}
+
+Response (400 - Bad Request)
+
+{
+  "error": "Invalid email format"
+}
+Response (400 - Bad Request)
+
+{
+  "error": "email is already exists"
+}
+
+POST /login
+Request:
+
+data:
+{
+  "email": "string",
+  "password": "string"
+}
+Response:
+
+status: 200
+body:​
+{ "access_token": "jwt string" }
+Response (401 - Unauthenticated)
+
+{ "error": "Invalid Email/Password" }
+
+
+GET /countries
+
+get all country from database
+
+response (200)
+
+[
+    {
+        "id": 45,
+        "name": "Austria",
+        "createdAt": "2021-07-27T14:34:52.395Z",
+        "updatedAt": "2021-07-27T14:34:52.395Z"
+    },
+    {
+        "id": 46,
+        "name": "Bahrain",
+        "createdAt": "2021-07-27T14:34:52.395Z",
+        "updatedAt": "2021-07-27T14:34:52.395Z"
+    },
+    {
+        "id": 47,
+        "name": "Belgium",
+        "createdAt": "2021-07-27T14:34:52.395Z",
+        "updatedAt": "2021-07-27T14:34:52.395Z"
+    }, 
+    .....,
+    .....
+]
+
+
+
+GET /stories
+
+get all story from database
+
+response (200)
+
+[
+    {
+        "id": 1,
+        "name": "Odalan",
+        "descriptions": "If you visit the island on certain dates, your visit might turn out to be truly unforgettable. At given times and year around, Man turns his Island into a giant playground for the many gods that have to be worshipped here. Then the real soul of Bali is revealed and you too will be dazzled by some enchanting ceremonies and the millions of colors that come with it… Pretty high chance you will stumble into a modest village ceremony or be welcomed on one of the bigger events, staged every 210 days according the Balinese calendar, to commemorate the birth of temple, during your stay on the island. Taken into account that every village has some three temples and that all this holy places will celebrate on a different date, you understand why Bali sometimes looks to be in a permanent state of religious bliss!",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Odalan_procession.JPG",
+        "createdAt": "2021-07-27T14:34:52.435Z",
+        "updatedAt": "2021-07-27T14:34:52.435Z"
+    },
+    ....
+]
+
+GET /travels
+
+get all travel from database
+
+response (200)
+
+[
+    {
+        "id": 3,
+        "name": "Ubud and Beach Stay",
+        "durations": "11 day / 10 nights",
+        "image_url": "https://whatsnewindonesia.com/wp-content/uploads/2020/07/Ubud.jpg",
+        "price": 1369,
+        "inclusive": [
+            "Private transfers and tours with air conditioned car or minivan",
+            " Services of an English-speaking guide during tours and transfers",
+            " Meals as specified in the itinerary",
+            " Activity as mentioned in the itinerary",
+            "  Entrance fees",
+            " parking fees",
+            " donations throughout the course of the program",
+            " Accommodation at mentioned hotels based on sharing in double / twin including daily breakfast",
+            " VAT"
+        ],
+        "exclusive": [
+            "Not mentioned services",
+            " Not mentioned meals",
+            " Drinks",
+            " personal expenses",
+            " Tip for guide and driver - tipping is a common way of showing your appreciation and highly recommended; guidelines for tipping will be inserted in the documentation your client(s) will receive when arriving in Indonesia",
+            " Insurance",
+            " Domestic flight"
+        ],
+        "createdAt": "2021-07-27T14:34:52.421Z",
+        "updatedAt": "2021-07-27T14:34:52.421Z"
+    },
+    ....
+]
+
+GET /travels/:id
+
+get all travel from database
+
+response (200)
+
+{
+    "id": 3,
+    "name": "Ubud and Beach Stay",
+    "durations": "11 day / 10 nights",
+    "image_url": "https://whatsnewindonesia.com/wp-content/uploads/2020/07/Ubud.jpg",
+    "price": 1369,
+    "inclusive": "Private transfers and tours with air conditioned car or minivan, Services of an English-speaking guide during tours and transfers, Meals as specified in the itinerary, Activity as mentioned in the itinerary,  Entrance fees, parking fees, donations throughout the course of the program, Accommodation at mentioned hotels based on sharing in double / twin including daily breakfast, VAT",
+    "exclusive": "Not mentioned services, Not mentioned meals, Drinks, personal expenses, Tip for guide and driver - tipping is a common way of showing your appreciation and highly recommended; guidelines for tipping will be inserted in the documentation your client(s) will receive when arriving in Indonesia, Insurance, Domestic flight",
+    "createdAt": "2021-07-27T14:34:52.421Z",
+    "updatedAt": "2021-07-27T14:34:52.421Z"
+}
+
+
+response (404)
+
+{
+    "error": "error not found"
+}
+
+
+GET /plans/:travel_id
+
+get all plan from database
+
+response (200)
+
+[
+    {
+        "id": 23,
+        "day": 1,
+        "image_url": "https://i.pinimg.com/originals/50/e1/35/50e135fa7a45f83218d8d36d1e3654cb.jpg",
+        "name": "Welcome to Bali",
+        "descriptions": "Welcome to Bali! Upon your arrival at Ngurah Rai International Airport of Denpasar you will be met by our representative at arrival terminal who will hold paging board with your name on it. Your private car is waiting for you to bring you to your resort which is located in Ubud. Start your Bali experience already on the way to your resort and spend the rest of the day unpacking and exploring the beautiful surroundings of your resort.",
+        "hotel": "Furama Xclusive Villa Ubud",
+        "TravelId": 3,
+        "createdAt": "2021-07-27T14:34:52.426Z",
+        "updatedAt": "2021-07-27T14:34:52.426Z"
+    },
+    ...
+]
+
+response (404)
+
+{
+    "error": "error not found"
+}
+
+
+POST /currency
+
+get converted currency from database
+
+response (200)
+
+{
+    "total": "16.94"
+}
+
+
+GET /currency/list 
+
+get all currency from database
+
+response (200)
+
+[
+    "aed",
+    "afn",
+    "all",
+    "amd",
+    "ang",
+    "aoa",
+    "ars",
+    "aud",
+    "awg",
+    "azn",
+    "bam",
+    "bbd",
+    ...
+]
+
+
+
+
+
