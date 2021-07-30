@@ -160,7 +160,7 @@ Initial Serve
 
 ##### url: http://localhost:3000/corona/indonesia
 
-```
+```js
 [
     {
         "name": "Indonesia",
@@ -176,7 +176,7 @@ Initial Serve
 
 ##### url: http://localhost:3000/corona/provinsi
 
-```
+```js
 [
     {
         "attributes": {
