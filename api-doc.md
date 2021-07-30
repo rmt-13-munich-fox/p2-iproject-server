@@ -47,7 +47,7 @@ _Response (400 - Error in create)_
 ```
 ----------
 
-### POST /admin/register
+### POST /client/register
 
 > Create new user (client)
 
@@ -93,7 +93,6 @@ _Response (400 - Error in create)_
 }
 ```
 ----------
-
 ### POST /login
 
 > sign in to app
@@ -264,6 +263,7 @@ _Response (500 - Internal server error)_
   'message': 'Internal server error'
 }
 ```
+---------------
 ### GET /posts/:id
 
 > fetch one blog article by id 
@@ -307,3 +307,310 @@ _Response (200)_
     }
 }
 ```
+
+_Response (400)_
+```
+{
+    "message": "article is not found"
+}
+```
+_Response (500 - Internal server error)_
+```
+{
+  'message': 'Internal server error'
+}
+```
+--------------------
+### POST /posts
+
+> create new article 
+
+_Request Header_
+```
+{
+  "access_token": "<access_token>"
+}
+```
+
+_Request Body_
+```
+{
+    "title" : "<title>",
+    "tagId" : "<tagId>",
+    "description" : "<description>",
+    "thumbnail" : "<thumbnail>"
+} 
+```
+
+_Response (201)_
+```
+{
+    "id": 13,
+    "title": "skincare 5",
+    "description": "lorem ipsum skincare 5",
+    "thumbnail": "https://ik.imagekit.io/aisyah/amy-shamblen-xwM61TPMlYk-unsplash_pXECJPiB1.jpg",
+    "tagId": 1,
+    "userId": 1,
+    "updatedAt": "2021-07-30T05:13:04.337Z",
+    "createdAt": "2021-07-30T05:13:04.337Z"
+}
+```
+
+_Response (500 - Internal server error)_
+```
+{
+  'message': 'Internal server error'
+}
+```
+
+_Response (401 - Invalid token)_
+```
+{
+  "message": `Invalid token`
+}
+```
+
+_Response (400 - Sequelize Validation Error)_
+```
+{
+  "message": [<validation error>]
+}
+```
+
+_Response (401 - Not logged in)_
+```
+{
+  "message": `You're not logged in. Please login first`
+}
+```
+
+_Response (413 - Size Too Big)_
+```
+{
+  "message": `You can only upload image with size max 3mb or below`
+}
+```
+
+_Response (415 - Unsupported Media Type)_
+```
+{
+  "message": `You can only upload image with filetype such as : 'jpeg','jpg','png'`
+}
+```
+----------
+
+### PUT /posts/:id
+
+> create new article 
+
+_Request Header_
+```
+{
+  "access_token": "<access_token>"
+}
+```
+
+_Request Body_
+```
+{
+    "title" : "<title>",
+    "tagId" : "<tagId>",
+    "description" : "<description>",
+    "thumbnail" : "<thumbnail>"
+} 
+```
+
+_Response (200)_
+```
+{
+    "id": 13,
+    "title": "skincare 5",
+    "description": "lorem ipsum skincare 5",
+    "thumbnail": "https://ik.imagekit.io/aisyah/amy-shamblen-xwM61TPMlYk-unsplash_pXECJPiB1.jpg",
+    "tagId": 1,
+    "userId": 1,
+    "updatedAt": "2021-07-30T05:13:04.337Z",
+    "createdAt": "2021-07-30T05:13:04.337Z"
+}
+```
+
+_Response (500 - Internal server error)_
+```
+{
+  'message': 'Internal server error'
+}
+```
+
+_Response (401 - Invalid token)_
+```
+{
+  "message": `Invalid token`
+}
+```
+
+_Response (400 - Sequelize Validation Error)_
+```
+{
+  "message": [<validation error>]
+}
+```
+
+_Response (401 - Not logged in)_
+```
+{
+  "message": `You're not logged in. Please login first`
+}
+```
+
+_Response (413 - Size Too Big)_
+```
+{
+  "message": `You can only upload image with size max 3mb or below`
+}
+```
+
+_Response (415 - Unsupported Media Type)_
+```
+{
+  "message": `You can only upload image with filetype such as : 'jpeg','jpg','png'`
+}
+```
+_Response (400 - not found)_
+```
+{
+  'message': 'article not found'
+}
+```
+----------
+### DELETE /posts/:id
+_Request Header_
+```
+{
+  "access_token": "<access_token>"
+}
+```
+
+_Request Body_
+```
+not needed
+```
+
+_Response (200)_
+```
+{
+    "message": "success deleting post"
+}
+```
+_Response (500 - Internal server error)_
+```
+{
+  'message': 'Internal server error'
+}
+```
+
+_Response (400 - Not found)_
+```
+{
+  'message': 'article not found'
+}
+```
+
+_Response (401 - Invalid token)_
+```
+{
+  "message": `Invalid token`
+}
+```
+
+_Response (401 - Not logged in)_
+```
+{
+  "message": `You're not logged in. Please login first`
+}
+```
+
+_Response (403 - Not authorized)_
+```
+{
+  "message": You're not authorized to do this action
+}
+```
+-----------------------
+## Bookmark
+
+### GET /bookmarks
+_Request Header_
+```
+{
+  "access_token": "<access_token>"
+}
+```
+
+_Request Body_
+```
+not needed
+```
+
+_Response (200)_
+```
+[
+    {
+        "id": 1,
+        "userId": 20,
+        "postId": 1,
+        "createdAt": "2021-07-28T22:49:42.633Z",
+        "updatedAt": "2021-07-28T22:49:42.633Z",
+        "Post": {
+            "id": 1,
+            "title": "make up 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam libero justo laoreet sit amet cursus. Vestibulum lectus mauris ultrices eros in cursus. Justo donec enim diam vulputate ut. Donec adipiscing tristique risus nec feugiat in fermentum. Egestas diam in arcu cursus euismod quis. Malesuada nunc vel risus commodo viverra maecenas. Nulla posuere sollicitudin aliquam ultrices sagittis orci. Non sodales neque sodales ut etiam sit. Donec enim diam vulputate ut pharetra sit. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Donec massa sapien faucibus et molestie ac feugiat. Amet justo donec enim diam vulputate ut pharetra. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Dignissim diam quis enim lobortis scelerisque. Aliquet nibh praesent tristique magna sit. Enim praesent elementum facilisis leo vel fringilla est.",
+            "thumbnail": "https://ik.imagekit.io/aisyah/amy-shamblen-xwM61TPMlYk-unsplash_EL7HMEQsN.jpg",
+            "userId": 1,
+            "tagId": 1,
+            "createdAt": "2021-07-28T09:46:12.778Z",
+            "updatedAt": "2021-07-28T09:46:12.778Z"
+        }
+    },
+    {
+        "id": 2,
+        "userId": 20,
+        "postId": 2,
+        "createdAt": "2021-07-28T22:51:26.019Z",
+        "updatedAt": "2021-07-28T22:51:26.019Z",
+        "Post": {
+            "id": 2,
+            "title": "skincare 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam libero justo laoreet sit amet cursus. Vestibulum lectus mauris ultrices eros in cursus. Justo donec enim diam vulputate ut. Donec adipiscing tristique risus nec feugiat in fermentum. Egestas diam in arcu cursus euismod quis. Malesuada nunc vel risus commodo viverra maecenas. Nulla posuere sollicitudin aliquam ultrices sagittis orci. Non sodales neque sodales ut etiam sit. Donec enim diam vulputate ut pharetra sit. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Donec massa sapien faucibus et molestie ac feugiat. Amet justo donec enim diam vulputate ut pharetra. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Dignissim diam quis enim lobortis scelerisque. Aliquet nibh praesent tristique magna sit. Enim praesent elementum facilisis leo vel fringilla est.",
+            "thumbnail": "https://ik.imagekit.io/aisyah/noah-buscher-eCJiD00AJqs-unsplash_I0SCw-Vn7.jpg",
+            "userId": 1,
+            "tagId": 2,
+            "createdAt": "2021-07-28T09:48:19.217Z",
+            "updatedAt": "2021-07-28T09:48:19.217Z"
+        }
+    },
+    ...
+]
+```
+------------------
+
+### DELETE /bookmarks/:id
+
+_Request Header_
+```
+{
+  "access_token": "<access_token>"
+}
+```
+
+_Request Body_
+```
+not needed
+```
+
+_Response (200)_
+```
+{
+    "message": "Bookmark is deleted"
+}
+```
+
