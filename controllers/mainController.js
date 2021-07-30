@@ -106,29 +106,14 @@ class Controller {
             if (addMarmut) {
                 res.status(201).json(`Little ${addMarmut.name} has been added to the community! Welcome!`)
             } else {
-                throw {
-                    code: 400,
+                res.status(401).json({
                     message: "Error Create Table",
                     name: "ErrorCreateAndEdit"
-                }
+                })
             }
         } catch (err) {
 			// console.log(err.message)
-            if (err.code) {
-                next({
-                    name: err.name,
-                    message: err.message
-                })
-            } else if (err.message) {
-                next({
-                    name: "ValidationError",
-                    message: err.message
-                })
-            } else {
-				console.log('err.message')
-                next({
-                })
-            }
+			res.status(500).json('Internal Server Error')
         }
     }
 }
