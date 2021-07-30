@@ -6,7 +6,7 @@ Initial Serve
 
 ##### url: http://localhost:3000/search?keyword=bigsource&page=2
 
-```
+```js
 {
     "search_information": {
         "original_query_yields_zero_results": false,
