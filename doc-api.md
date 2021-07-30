@@ -1,5 +1,3 @@
-Initial Serve
-
 ### Dokumentasi API
 
 #### GET/
