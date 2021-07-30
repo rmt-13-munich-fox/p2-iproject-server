@@ -17,6 +17,7 @@ _Request Body_
 ```
 {
     "username": "Bambang",
+    "room": "Manga"
 }
 ```
 
